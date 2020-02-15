@@ -8,7 +8,7 @@ admin.site.site_url = "/"
 
 class InlineContractors(admin.TabularInline):
     model = other_contractors_bid
-    extra = 1
+    extra = 3
 
 class TenderAdmin(admin.ModelAdmin):
     inlines = [InlineContractors]
