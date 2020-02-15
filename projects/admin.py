@@ -1,8 +1,10 @@
 from django.contrib import admin
 from .models import other_contractors_bid, Tender
 from django.contrib.auth.models import Group
+from django.contrib.admin import AdminSite
 # Register your models here.
 
+admin.site.site_url = "/"
 
 class InlineContractors(admin.TabularInline):
     model = other_contractors_bid
