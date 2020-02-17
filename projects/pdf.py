@@ -1,10 +1,13 @@
 from fpdf import FPDF
 
-class CreatePDF():
+class CreatePDFLetter():
 
     def __init__(self):
         self.pdf = FPDF()
         self.pdf.add_page()
+    
+    def change_font(self):
+        self.pdf.font_size = 20
     
     def write_left_bold(self,text,margin_top):
         self.pdf.set_font("Arial", size=12,style='B')
@@ -57,29 +60,4 @@ class CreatePDF():
         self.pdf.output(file_name)
 
 if __name__ == "__main__":
-
-    pdf_object = CreatePDF()
-    pdf_object.write_left_bold("EW/2020",10)
-    pdf_object.write_right_bold("Date - Feb 16th, 2020",5)
-    pdf_object.write_normal("To,\nThe Excutive Engineer\n400 KV Testing Division\nMPPTCL\nNagda",5)
-    pdf_object.write_left_bold("Subject: Operation and Minor Operation work of 132 KV S/S Bhensola",30)
-    pdf_object.write_left_normal("Respected Sir,",20)
-    pdf_object.write_normal("Please find enclosed here with the bill in quadruplicate for the period of 11/02/2000 to 20/02/2020 in reference to order number 04-04/SE-II/TS-88/2019/2873 Dated 13/12/2019 from C.E. (T&C) Jabalpur\n",10)
-    pdf_object.write_left_bold("Enclosures: ",10)
-    pdf_object.write_left_normal("1. Covering Letter",5)
-    pdf_object.write_left_normal("2. Bill",5)
-    pdf_object.write_left_normal("3. Attendance Sheet",5)
-    pdf_object.write_left_normal("4. Salary Sheet",5)
-    pdf_object.write_left_normal("5. Statement",5)
-    pdf_object.write_left_normal("6. Payment Reciept",5)
-    pdf_object.write_left_normal("7. ERF",5)
-    pdf_object.write_left_normal("8. ECR",5)
-    pdf_object.write_left_normal("9. ESIC",5)
-    pdf_object.write_left_normal("10. Payment Reciept",5)
-    pdf_object.write_left_normal("11. ESIC Contribution",5)
-    pdf_object.write_center_bold("Thanking You",20)
-    pdf_object.write_right_normal('GST NO: 23ACMPK3187CIZR ',10)
-    pdf_object.write_right_normal('PAN NO: ACMPK3187C',5)
-    pdf_object.write_left_bold("M/s Elite Works",10)
-    pdf_object.generate_pdf("sample.pdf")
     pass
