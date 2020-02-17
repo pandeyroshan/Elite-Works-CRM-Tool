@@ -58,6 +58,12 @@ class CreatePDFLetter():
 
     def generate_pdf(self,file_name):
         self.pdf.output(file_name)
+    
+    def write_red(self,text):
+        self.pdf.set_text_color(255,0,0)
+        self.pdf.set_font('Times','',20.0)
+        self.pdf.cell(150,margin_top, txt=text,border=20, ln=1, align="C")
+        pass
 
 if __name__ == "__main__":
     pass
