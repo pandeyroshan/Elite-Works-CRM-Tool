@@ -1,4 +1,4 @@
-from .pdf import CreatePDF
+from pdf import CreatePDFLetter
 
 if __name__ == "__main__":
     pdf_object = CreatePDFLetter()

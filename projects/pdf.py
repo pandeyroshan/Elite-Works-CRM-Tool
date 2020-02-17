@@ -36,7 +36,12 @@ class CreatePDFLetter():
 
     def write_center_normal(self,text,margin_top):
         self.pdf.set_font("Arial", size=12)
-        self.pdf.cell(150,margin_top, txt=text,border=20, ln=1, align="C")
+        self.pdf.cell(200,margin_top, txt=text,border=20, ln=1, align="C")
+        pass
+
+    def write_center_underline(self,text,margin_top):
+        self.pdf.set_font("Arial",size=12,style='U')
+        self.pdf.cell(200,margin_top,txt=text,border=20,ln=1,align='C')
         pass
 
     def write_normal(self,text,margin_top):
@@ -50,7 +55,7 @@ class CreatePDFLetter():
         pass
 
     def draw_line(self):
-        self.pdf.line(10, 10, 10, 100)
+        self.pdf.line(10, 50, 200, 50)
         self.pdf.set_line_width(1)
         self.pdf.set_draw_color(255, 255, 255)
         self.pdf.line(20, 20, 100, 20)
@@ -59,11 +64,12 @@ class CreatePDFLetter():
     def generate_pdf(self,file_name):
         self.pdf.output(file_name)
     
-    def write_red(self,text):
+    def normal_font(self):
+        self.pdf.set_text_color(0,0,0)
+    
+    def write_red(self,text,margin_top):
         self.pdf.set_text_color(255,0,0)
-        self.pdf.set_font('Times','',20.0)
-        self.pdf.cell(150,margin_top, txt=text,border=20, ln=1, align="C")
+        self.pdf.set_font("Arial", size=35,style='B')
+        self.pdf.cell(200,margin_top, txt=text,border=20, ln=1, align="C")
+        self.normal_font()
         pass
-
-if __name__ == "__main__":
-    pass
