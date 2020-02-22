@@ -43,3 +43,11 @@ def add_tender(request):
     else:
         form = TenderAdd()
     return render(request,'projects/add_tender.html',{'form' : form})
+
+@login_required
+def my_tender(request):
+    tender_list = Tender.objects.filter(bid_status='Yes')
+    context = {
+        'tender_list': tender_list
+    }
+    return render(request,'projects/my_tender.html',context)
