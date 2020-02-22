@@ -1,17 +1,18 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from projects.models import Tender,other_contractors_bid
-from .forms import TenderAdd,ContractorForm
+from projects.models import Tender,other_contractors_bid, Projects
+from employee.models import SuperVisors
+from .forms import TenderAdd,ContractorForm,ProjectForm
 # Create your views here.
 
 @login_required
 def index(request):
-    tender_objects = Tender.objects.all()
-    success_tender = Tender.objects.all().filter(bid_status='Yes')
-    print(success_tender)
     context = {
-        'total_tender' : len(tender_objects),
-        'success_tender' : len(success_tender)
+        'total_tender' : len(Tender.objects.all()),
+        'success_tender' : len(Tender.objects.all().filter(bid_status='Yes')),
+        'projects' : len(Projects.objects.all()),
+        'SuperVisors': len(SuperVisors.objects.all()),
+        'all_project': Projects.objects.all()
     }
     return render(request,'projects/index.html',context)
 
@@ -94,3 +95,20 @@ def edit_tender(request,id):
             'prize_bid': tender.prize_bid
         })
     return render(request,'projects/edit_tender.html',{'form':form})
+
+@login_required
+def all_projects(request):
+    return render(request,'projects/project.html',{'projects': Projects.objects.all()})
+
+@login_required
+def add_project(request,id):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form_data = form.save(commit=False)
+            form_data.tender = Tender.objects.get(id=id)
+            form_data.save()
+        pass
+    else:
+        form = ProjectForm()
+    return render(request,'projects/add_project.html',{'form':form})

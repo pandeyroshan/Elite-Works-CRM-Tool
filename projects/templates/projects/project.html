@@ -47,11 +47,11 @@
                                 Dashboard</a
                             >
                             <div class="sb-sidenav-menu-heading">Tender & Projects</div>
-                            <a class="nav-link collapsed" href="/tender" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                            <a class="nav-link collapsed" href="/tender/" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Tenders
                             </a>
-                            <a class="nav-link collapsed" href="/projects/" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
+                            <a class="nav-link collapsed" href="#" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Projects
                             </a>
@@ -72,63 +72,28 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">All Tenders - {{total_tender}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="tender/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">My Tenders - {{success_tender}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="my_tender/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">All Projects - {{projects}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/projects/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">All Supervisors - {{SuperVisors}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/supervisor/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h1 class="mt-4 mb-5 mr-5">Project Details - All</h1>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Live Projects</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Tender Lists</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Project</th>
                                                 <th>Tender</th>
+                                                <th>Name</th>
                                                 <th>Start Date</th>
                                                 <th>Supervisor</th>
+                                                <!--
+                                                    List the no of employee as well
+                                                -->
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {%for project in all_project%}
+                                            {%for project in projects%}
                                             <tr>
+                                                <td><a href="">{{project.tender}}</a></td>
                                                 <td>{{project.project_name}}</td>
-                                                <td>{{project.tender}}</td>
                                                 <td>{{project.start_date}}</td>
                                                 <td>{{project.supervisor}}</td>
                                             </tr>

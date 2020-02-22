@@ -18,9 +18,19 @@ urlpatterns = [
     path('add_contractor/<int:id>/',project_view.add_contractor,name='add_contractor'),
     path('edit_tender/<int:id>/',project_view.edit_tender,name='edit_tender'),
     path('supervisor/',emp_view.get_all_supervisor,name='all_supervisor'),
-    path('labour/',emp_view.get_all_employee,name='all_employee')
+    path('labour/',emp_view.get_all_employee,name='all_employee'),
+    path('projects/',project_view.all_projects,name='all_projects'),
+    path('add_project/<int:id>',project_view.add_project,name='add_tender'),
 ]
 
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+'''
+
+Add Supervisor
+Add Labour
+
+'''

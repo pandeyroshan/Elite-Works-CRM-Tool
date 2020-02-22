@@ -51,3 +51,13 @@ class Projects(models.Model):
     class Meta:
         verbose_name = 'Project'
         verbose_name_plural = 'Project'
+
+
+class Permissions(models.Model):
+    edit_attendance = models.BooleanField()
+    add_labour = models.BooleanField()
+    delete_labour = models.BooleanField()
+
+    class Meta:
+        verbose_name = 'Permissions'
+        verbose_name_plural = 'Permissions'

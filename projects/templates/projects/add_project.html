@@ -1,4 +1,5 @@
 {% load static %}
+{%load crispy_forms_tags%}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -47,19 +48,19 @@
                                 Dashboard</a
                             >
                             <div class="sb-sidenav-menu-heading">Tender & Projects</div>
-                            <a class="nav-link collapsed" href="/tender" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                            <a class="nav-link collapsed" href="#" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Tenders
                             </a>
-                            <a class="nav-link collapsed" href="/projects/" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
+                            <a class="nav-link collapsed" href="#" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Projects
                             </a>
                             <div class="sb-sidenav-menu-heading">Supervisors & Employee</div>
-                            <a class="nav-link" href="/supervisor"
+                            <a class="nav-link" href="charts.html"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Supervisors</a
-                            ><a class="nav-link" href="/labour"
+                            ><a class="nav-link" href="tables.html"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Employee</a>
                         </div>
@@ -72,73 +73,15 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">All Tenders - {{total_tender}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="tender/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">My Tenders - {{success_tender}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="my_tender/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">All Projects - {{projects}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/projects/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">All Supervisors - {{SuperVisors}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/supervisor/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h1 class="mt-4 mb-5 mr-5">Add Project <button type="button" class=" ml-5 btn btn-primary">Go Back</button></h1>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Live Projects</div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Project</th>
-                                                <th>Tender</th>
-                                                <th>Start Date</th>
-                                                <th>Supervisor</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {%for project in all_project%}
-                                            <tr>
-                                                <td>{{project.project_name}}</td>
-                                                <td>{{project.tender}}</td>
-                                                <td>{{project.start_date}}</td>
-                                                <td>{{project.supervisor}}</td>
-                                            </tr>
-                                            {%endfor%}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                    <form method='POST' enctype= multipart/form-data>
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-success mb-5 text-right">Login</button>
+                        </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
