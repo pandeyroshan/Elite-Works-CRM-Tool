@@ -12,5 +12,6 @@ urlpatterns = [
     path('tender/',project_view.tender,name='tender'),
     path('tender/<int:id>/',project_view.tender_details,name='tender_details'),
     path('add_tender/',project_view.add_tender,name='add_tender'),
-    path('my_tender/',project_view.my_tender,name='my_tender')
+    path('my_tender/',project_view.my_tender,name='my_tender'),
+    path('add_contractor/<int:id>/',project_view.add_contractor,name='add_contractor')
 ]
