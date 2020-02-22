@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from projects.models import Tender,other_contractors_bid
-from .forms import TenderAdd
+from .forms import TenderAdd,ContractorForm
 # Create your views here.
 
 @login_required
@@ -51,3 +51,16 @@ def my_tender(request):
         'tender_list': tender_list
     }
     return render(request,'projects/my_tender.html',context)
+
+def add_contractor(request,id):
+    tender = Tender.objects.get(id=id)
+    if request.method == 'POST':
+        form = ContractorForm(request.POST)
+        if form.is_valid():
+            form_data = form.save(commit=False)
+            form_data.tender = Tender.objects.get(id=id)
+            form_data.save()
+            return redirect('/tender')
+    else:
+        form = ContractorForm()
+    return render(request,'projects/add_contractor.html',{'form':form,'tender':tender})
