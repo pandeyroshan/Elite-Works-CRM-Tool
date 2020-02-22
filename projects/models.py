@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from employee.models import SuperVisors,labour
 # Create your models here.
 
 class Tender(models.Model):
@@ -36,3 +37,17 @@ class other_contractors_bid(models.Model):
     class Meta:
         verbose_name = 'Other Contractors'
         verbose_name_plural = 'Other Contractors'
+
+class Projects(models.Model):
+    tender = models.ForeignKey(Tender,on_delete=models.CASCADE)
+    project_name = models.CharField(max_length=50)
+    start_date = models.DateField('Start Date',default=timezone.now)
+    supervisor = models.ForeignKey(SuperVisors,on_delete=models.CASCADE)
+    labours = models.ManyToManyField(labour)
+
+    def __str__(self):
+        return self.tender.tender_number+" - "+self.project_name
+    
+    class Meta:
+        verbose_name = 'Project'
+        verbose_name_plural = 'Project'

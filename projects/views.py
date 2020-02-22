@@ -39,7 +39,6 @@ def add_tender(request):
         form = TenderAdd(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-        print(form.errors)
     else:
         form = TenderAdd()
     return render(request,'projects/add_tender.html',{'form' : form})
@@ -52,6 +51,7 @@ def my_tender(request):
     }
     return render(request,'projects/my_tender.html',context)
 
+@login_required
 def add_contractor(request,id):
     tender = Tender.objects.get(id=id)
     if request.method == 'POST':
@@ -64,3 +64,33 @@ def add_contractor(request,id):
     else:
         form = ContractorForm()
     return render(request,'projects/add_contractor.html',{'form':form,'tender':tender})
+
+@login_required
+def edit_tender(request,id):
+    if request.method == 'POST':
+        form = TenderAdd(request.POST,request.FILES)
+        if form.is_valid():
+            tender = Tender.objects.get(id=id)
+            tender.tender_number = request.POST.get('tender_number')
+            tender.tender_name = request.POST.get('tender_name')
+            tender.tender_submission_date = request.POST.get('tender_submission_date')
+            tender.physical_submission_date = request.POST.get('physical_submission_date')
+            tender.tech_bid_opening_date = request.POST.get('tech_bid_opening_date')
+            tender.bid_status = request.POST.get('bid_status')
+            tender.prize_bid = request.POST.get('prize_bid')
+            tender.tender_purchase_reciept = request.FILES.get('tender_purchase_reciept')
+            tender.tender_confirmation_reciept = request.FILES.get('tender_confirmation_reciept')
+            tender.save()
+        pass
+    else:
+        tender = Tender.objects.get(id=id)
+        form = TenderAdd(initial={
+            'tender_number' : tender.tender_number,
+            'tender_name' : tender.tender_name,
+            'tender_submission_date': tender.tender_submission_date,
+            'physical_submission_date': tender.physical_submission_date,
+            'tech_bid_opening_date': tender.tech_bid_opening_date,
+            'bid_status': tender.bid_status,
+            'prize_bid': tender.prize_bid
+        })
+    return render(request,'projects/edit_tender.html',{'form':form})

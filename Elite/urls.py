@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path
 from projects import views as project_view
+from employee import views as emp_view
 from django.contrib.auth import views as auth_views
 from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,5 +15,12 @@ urlpatterns = [
     path('tender/<int:id>/',project_view.tender_details,name='tender_details'),
     path('add_tender/',project_view.add_tender,name='add_tender'),
     path('my_tender/',project_view.my_tender,name='my_tender'),
-    path('add_contractor/<int:id>/',project_view.add_contractor,name='add_contractor')
+    path('add_contractor/<int:id>/',project_view.add_contractor,name='add_contractor'),
+    path('edit_tender/<int:id>/',project_view.edit_tender,name='edit_tender'),
+    path('supervisor/',emp_view.get_all_supervisor,name='all_supervisor'),
+    path('labour/',emp_view.get_all_employee,name='all_employee')
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
