@@ -198,7 +198,7 @@ python-gnupg==0.4.1
 python-magic==0.4.15
 python3-openid==3.1.0
 pytz==2018.5
-pyxdg==0.25
+pyxdg==0.26
 PyYAML==3.12
 razorpay==1.2.0
 redis==3.3.10
