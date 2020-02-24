@@ -21,6 +21,7 @@ urlpatterns = [
     path('labour/',emp_view.get_all_employee,name='all_employee'),
     path('projects/',project_view.all_projects,name='all_projects'),
     path('add_project/<int:id>',project_view.add_project,name='add_tender'),
+    path('create_supervisor/',emp_view.create_super,name='create_super')
 ]
 
 
@@ -32,5 +33,12 @@ if settings.DEBUG:
 
 Add Supervisor
 Add Labour
+
+Add Labour under Super/Project - not at the time of Project Creation
+Add supervisor as the same way  
+Supervisor can't add Employee
+
+
+Attandace
 
 '''

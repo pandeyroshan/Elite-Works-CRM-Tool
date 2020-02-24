@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from projects.models import Projects
 # Create your models here.
 
 
 class SuperVisors(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    project = models.OneToOneField(Projects,on_delete=models.CASCADE,null=True)
+    username = models.CharField(max_length=50,blank=False)
+    password = models.CharField(max_length=50,blank=False)
     name = models.CharField('Name', max_length=250,blank=False)
     image = models.ImageField('Image',upload_to='Supervisor_Images',blank=True)
     mobile_number = models.CharField('Mobile Number',max_length=15)
@@ -30,8 +33,10 @@ class SuperVisors(models.Model):
     class Meta:
         verbose_name = 'Supervisors List'
         verbose_name_plural = 'Supervisors List'
+        unique_together = ('project', 'username',)
 
 class labour(models.Model):
+    project = models.OneToOneField(Projects,on_delete=models.CASCADE,null=True)
     name = models.CharField('Name', max_length=250,blank=False)
     image = models.ImageField('Image',upload_to='labour_Images',blank=True)
     mobile_number = models.CharField('Mobile Number',max_length=15)

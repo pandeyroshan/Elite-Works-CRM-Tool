@@ -57,10 +57,10 @@
                                 Projects
                             </a>
                             <div class="sb-sidenav-menu-heading">Supervisors & Employee</div>
-                            <a class="nav-link" href="charts.html"
+                            <a class="nav-link" href="/supervisor/"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Supervisors</a
-                            ><a class="nav-link" href="tables.html"
+                            ><a class="nav-link" href="/employee/"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Employee</a>
                         </div>
@@ -73,14 +73,14 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4 mb-5 mr-5">Add Tender <button type="button" class=" ml-5 btn btn-primary">Go Back</button></h1>
+                        <h1 class="mt-4 mb-5 mr-5">Add Supervisor here <a href="../"><button type="button" class=" ml-5 btn btn-primary">Go Back</button></a></h1>
                         <div class="card mb-4">
                     </div>
                     <form method='POST' enctype= multipart/form-data>
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="text-right">
-                            <button type="submit" class="btn btn-success mb-5 text-right">Submit</button>
+                            <button type="submit" class="btn btn-success mb-5 text-right">Add</button>
                         </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

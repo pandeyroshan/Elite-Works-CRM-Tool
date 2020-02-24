@@ -16,4 +16,4 @@ class ContractorForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Projects
-        fields = ('project_name','start_date','supervisor','labours')
+        fields = ('project_name','start_date',)
