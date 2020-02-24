@@ -6,6 +6,10 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+handler404 = 'yourapp.views.handler404'
+handler500 = 'yourapp.views.handler500'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',auth_views.LoginView.as_view(template_name='projects/login.html'),name='login'),
@@ -27,18 +31,3 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-'''
-
-Add Supervisor
-Add Labour
-
-Add Labour under Super/Project - not at the time of Project Creation
-Add supervisor as the same way  
-Supervisor can't add Employee
-
-
-Attandace
-
-'''
