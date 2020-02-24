@@ -7,8 +7,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-handler404 = 'yourapp.views.handler404'
-handler500 = 'yourapp.views.handler500'
+handler404 = 'employee.views.handler404'
+handler500 = 'employee.views.handler500'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +25,10 @@ urlpatterns = [
     path('labour/',emp_view.get_all_employee,name='all_employee'),
     path('projects/',project_view.all_projects,name='all_projects'),
     path('add_project/<int:id>',project_view.add_project,name='add_tender'),
-    path('create_supervisor/',emp_view.create_super,name='create_super')
+    path('create_supervisor/',emp_view.create_super,name='create_super'),
+    path('create_labour/',emp_view.create_labour,name='create_labour'),
+    path('project/<int:id>/',project_view.project_details,name='project_detail'),
+    path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance')
 ]
 
 

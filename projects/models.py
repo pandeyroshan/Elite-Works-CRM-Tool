@@ -41,6 +41,7 @@ class Projects(models.Model):
     tender = models.ForeignKey(Tender,on_delete=models.CASCADE)
     project_name = models.CharField(max_length=50)
     start_date = models.DateField('Start Date',default=timezone.now)
+    use_less = models.BooleanField(default=True)
 
     def __str__(self):
         return self.tender.tender_number+" - "+self.project_name+str(self.id)

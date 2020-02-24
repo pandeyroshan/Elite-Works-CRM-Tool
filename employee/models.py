@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 from projects.models import Projects
 # Create your models here.
 
@@ -28,7 +29,7 @@ class SuperVisors(models.Model):
     is_employee = models.BooleanField('Employee')
 
     def __str__(self):
-        return self.name
+        return self.username
     
     class Meta:
         verbose_name = 'Supervisors List'
@@ -36,7 +37,7 @@ class SuperVisors(models.Model):
         unique_together = ('project', 'username',)
 
 class labour(models.Model):
-    project = models.OneToOneField(Projects,on_delete=models.CASCADE,null=True)
+    project = models.ForeignKey(Projects,on_delete=models.CASCADE,null=True)
     name = models.CharField('Name', max_length=250,blank=False)
     image = models.ImageField('Image',upload_to='labour_Images',blank=True)
     mobile_number = models.CharField('Mobile Number',max_length=15)
@@ -61,3 +62,21 @@ class labour(models.Model):
     class Meta:
         verbose_name = 'Labour List'
         verbose_name_plural = 'Labour List'
+
+class Attendance(models.Model):
+    project = models.ForeignKey(Projects,on_delete=models.CASCADE)
+    date = models.DateField('Start Date',default=timezone.now)
+    labour = models.ForeignKey(labour,on_delete=models.CASCADE)
+    A = 'A'
+    B = 'B'
+    C = 'C'
+    status = [(A, 'A'),(B, 'B'),(C, 'C')]
+    shift = models.CharField('Shift',max_length=10,choices=status,default=A)
+    is_present = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.labour+self.is_present
+    
+    class Meta:
+        verbose_name = 'Attandance'
+        verbose_name_plural = 'Attandance'

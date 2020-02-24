@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from projects.models import Tender,other_contractors_bid, Projects
-from employee.models import SuperVisors
+from employee.models import SuperVisors, labour
 from .forms import TenderAdd,ContractorForm,ProjectForm
 # Create your views here.
 
@@ -112,3 +112,13 @@ def add_project(request,id):
     else:
         form = ProjectForm()
     return render(request,'projects/add_project.html',{'form':form})
+
+
+@login_required
+def project_details(request,id):
+    supervisor = SuperVisors.objects.get(project=id)
+    return render(request,'projects/project_detail.html',{
+        'project': Projects.objects.get(id=id),
+        'supervisor': supervisor,
+        'total_labour': len(labour.objects.all().filter(project = id))
+        })

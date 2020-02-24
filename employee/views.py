@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import SuperVisors,labour
-from .forms import SupervisorForm
+from .forms import SupervisorForm,labourForm
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -26,6 +26,34 @@ def create_super(request):
             user = User.objects.create_user(username, 'random@gmail.com', password)
             user.save()
             form.save()
+            return redirect('/supervisor/')
     else:
         form = SupervisorForm()
     return render(request,'employee/create_super.html',{'form':form})
+
+
+def handler404(request,exception):
+    return render(request,'projects/404.html')
+
+
+def handler500(request):
+    return render(request,'projects/404.html')
+
+def create_labour(request):
+    if request.method == 'POST':
+        form = labourForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/labour/')
+    else:
+        form = labourForm()
+    return render(request,'employee/add_labour.html',{'form':form})
+
+def mark_attandance(request,id):
+    # here id is the project id
+    print(request.user)
+    print(SuperVisors.objects.get(project=id))
+    if str(request.user) == str(SuperVisors.objects.get(project=id)): # success
+        return render(request,'employee/attandance.html')
+    else:
+        return render(request,'projects/404.html')

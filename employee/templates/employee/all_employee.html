@@ -72,7 +72,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4 mb-5 mr-5">Labour Force <a href=""><button type="button" class=" ml-5 btn btn-primary">Add Labour</button></a></h1>
+                        <h1 class="mt-4 mb-5 mr-5">Labour Force <a href="/create_labour/"><button type="button" class=" ml-5 btn btn-primary">Add Labour</button></a></h1>
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Supervisor List</div>
                             <div class="card-body">
@@ -81,6 +81,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
+                                                <th>Project</th>
                                                 <th>Mobile Number</th>
                                                 <th>Address</th>
                                                 <th>Aadhar Number</th>
@@ -92,6 +93,7 @@
                                             {%for super in employee%}
                                             <tr>
                                                 <td><a href="{{super.id}}">{{super.name}}</a></td>
+                                                <td>{{super.project}}</td>
                                                 <td>{{super.mobile_number}}</td>
                                                 <td>{{super.address}}</td>
                                                 <td>{{super.aadhar_number}}</td>

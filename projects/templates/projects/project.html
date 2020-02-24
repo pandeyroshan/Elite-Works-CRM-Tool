@@ -92,8 +92,8 @@
                                         <tbody>
                                             {%for project in projects%}
                                             <tr>
-                                                <td><a href="">{{project.tender}}</a></td>
-                                                <td>{{project.project_name}}</td>
+                                                <td>{{project.tender}}</td>
+                                                <td><a href="/project/{{project.id}}">{{project.project_name}}</a></td>
                                                 <td>{{project.start_date}}</td>
                                                 <td>{{project.supervisor}}</td>
                                             </tr>
