@@ -77,7 +77,7 @@ elasticsearch==6.3.1
 elasticsearch-dsl==6.0.1
 Faker==2.0.2
 feedparser==5.2.1
-Flask==0.12.2
+Flask==1.0
 Flask-BabelEx==0.9.3
 Flask-Compress==1.4.0
 Flask-Gravatar==0.4.2
