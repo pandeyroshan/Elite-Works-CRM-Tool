@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from projects.models import Projects
-# Create your models here.
+# Create your models here
 
 
 class SuperVisors(models.Model):
