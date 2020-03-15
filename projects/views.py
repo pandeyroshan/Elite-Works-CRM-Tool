@@ -7,12 +7,17 @@ from .forms import TenderAdd,ContractorForm,ProjectForm
 
 @login_required
 def index(request):
+    project_data = Projects.objects.all().values()
+    for i in range(len(project_data)):
+        supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+        project_data[i]['supervisor'] = supervisor
+        project_data[i]['tender'] = Tender.objects.get(id=project_data[i]['tender_id'])
     context = {
         'total_tender' : len(Tender.objects.all()),
         'success_tender' : len(Tender.objects.all().filter(bid_status='Yes')),
         'projects' : len(Projects.objects.all()),
         'SuperVisors': len(SuperVisors.objects.all()),
-        'all_project': Projects.objects.all()
+        'all_project': project_data
     }
     return render(request,'projects/index.html',context)
 
@@ -96,9 +101,34 @@ def edit_tender(request,id):
         })
     return render(request,'projects/edit_tender.html',{'form':form})
 
+
+@login_required
+def edit_project(request,id):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            project = Projects.objects.get(id=id)
+            project.project_name = request.POST.get('project_name')
+            project.start_date = request.POST.get('start_date')
+            project.save()
+            return redirect('/project/'+str(id)+'/')
+    else:
+        project = Projects.objects.get(id=id)
+        form = ProjectForm(initial={
+            'project_name': project.project_name,
+            'start_date' : project.start_date
+        })
+    return render(request,'projects/edit_project.html',{'form': form})
+
+
 @login_required
 def all_projects(request):
-    return render(request,'projects/project.html',{'projects': Projects.objects.all()})
+    project_data = Projects.objects.all().values()
+    for i in range(len(project_data)):
+        supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+        project_data[i]['supervisor'] = supervisor
+        project_data[i]['tender'] = Tender.objects.get(id=project_data[i]['tender_id'])
+    return render(request,'projects/project.html',{'projects': project_data})
 
 @login_required
 def add_project(request,id):
@@ -120,5 +150,6 @@ def project_details(request,id):
     return render(request,'projects/project_detail.html',{
         'project': Projects.objects.get(id=id),
         'supervisor': supervisor,
-        'total_labour': len(labour.objects.all().filter(project = id))
+        'total_labour': len(labour.objects.all().filter(project = id)),
+        'employee' : labour.objects.all().filter(project=id)
         })

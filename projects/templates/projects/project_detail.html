@@ -47,11 +47,11 @@
                                 Dashboard</a
                             >
                             <div class="sb-sidenav-menu-heading">Tender & Projects</div>
-                            <a class="nav-link collapsed" href="/tender" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                            <a class="nav-link collapsed" href="/tender/" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Tenders
                             </a>
-                            <a class="nav-link collapsed" href="#" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
+                            <a class="nav-link collapsed" href="/projects/" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Projects
                             </a>
@@ -59,7 +59,7 @@
                             <a class="nav-link" href="/supervisor"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Supervisors</a
-                            ><a class="nav-link" href="/labour"
+                            ><a class="nav-link" href="/employee/"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Employee</a>
                         </div>
@@ -72,29 +72,38 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4 mb-5 mr-5">{{project.project_name}} - {{tender_object.tender_number}} <a href="/edit_tender/{{tender_object.id}}"><button type="button" class="ml-3 btn btn-danger mr-3">Edit Project</button></a> <a href="/attandance/{{project.id}}"><button type="button" class="btn btn-success mr-3">Attandance</button></a></h1>
+                        <h1 class="mt-4 mb-5 mr-5">{{project.project_name}} - {{tender_object.tender_number}} <a href="/edit_project/{{project.id}}"><button type="button" class="ml-3 btn btn-danger mr-3">Edit Project</button></a> <a href="/attandance/{{project.id}}"><button type="button" class="btn btn-success mr-3">Attandance</button></a></h1>
                         <hr><br>
                         <h4 class="font-weight-light">Start Date: {{project.start_date}}</h4>
                         <h4 class="font-weight-light">Supervisor: {{supervisor.name}}</h4>
-                        <h4 class="font-weight-light">Total Labour: {{total_labour}}</h4>
-                        <!-- <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Other Contractor Lists</div>
+                        <h4 class="font-weight-light mb-3">Total Labour: {{total_labour}}</h4>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Employee List</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>S.No.</th>
-                                                <th>Contractor</th>
-                                                <th>Bid Amount</th>
+                                                <th>Name</th>
+                                                <th>Project</th>
+                                                <th>Mobile Number</th>
+                                                <th>Address</th>
+                                                <th>Aadhar Number</th>
+                                                <th>PAN Number</th>
+                                                <th>UAN Number</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {%for contractors in other_contractors%}
+                                            {%for super in employee%}
                                             <tr>
-                                                <td>{{forloop.counter}}</td>
-                                                <td>{{contractors.contractor_info}}</td>
-                                                <td>{{contractors.contractor_price}}</td>
+                                                <td><a href="{{super.id}}">{{super.name}}</a></td>
+                                                <td>{{super.project}}</td>
+                                                <td>{{super.mobile_number}}</td>
+                                                <td>{{super.address}}</td>
+                                                <td>{{super.aadhar_number}}</td>
+                                                <td>{{super.pan_number}}</td>
+                                                <td>{{super.UAN_number}}</td>
                                             </tr>
                                             {%endfor%}
                                         </tbody>
@@ -102,7 +111,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">

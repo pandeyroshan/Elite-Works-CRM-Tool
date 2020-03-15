@@ -51,7 +51,7 @@
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Tenders
                             </a>
-                            <a class="nav-link collapsed" href="#" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
+                            <a class="nav-link collapsed" href="/projects/" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Projects
                             </a>
@@ -59,7 +59,7 @@
                             <a class="nav-link" href="/supervisor"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Supervisors</a
-                            ><a class="nav-link" href="/labour"
+                            ><a class="nav-link" href="/labour/"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Employee</a>
                         </div>
@@ -95,7 +95,7 @@
                                                 <td>{{project.tender}}</td>
                                                 <td><a href="/project/{{project.id}}">{{project.project_name}}</a></td>
                                                 <td>{{project.start_date}}</td>
-                                                <td>{{project.supervisor}}</td>
+                                                <td>{{project.supervisor.name}}</td>
                                             </tr>
                                             {%endfor%}
                                         </tbody>
