@@ -28,6 +28,7 @@ urlpatterns = [
     path('create_supervisor/',emp_view.create_super,name='create_super'),
     path('create_labour/',emp_view.create_labour,name='create_labour'),
     path('project/<int:id>/',project_view.project_details,name='project_detail'),
+    path('edit_project/<int:id>',project_view.edit_project,name='edit_project'),
     path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance')
 ]
 
