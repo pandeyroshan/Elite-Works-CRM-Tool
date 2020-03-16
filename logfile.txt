@@ -1,0 +1,885 @@
+App 3718434 output: admin
+App 3718434 output: roshan172
+App 144562 output: admin
+App 144562 output: roshan172
+App 1603812 output: admin
+App 1603812 output: roshan172
+App 1632221 output: admin
+App 1632221 output: kishan
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:35:52,750 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:35:56,011 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:35:56,590 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:35:57,079 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:35:59,480 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:36:04,129 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: [ pid=1835664, time=2020-03-16 01:38:24,529 ]: OK: /
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1835664 output:     return self._session_cache
+App 1835664 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1835664 output: 
+App 1835664 output: During handling of the above exception, another exception occurred:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: sqlite3.OperationalError: no such table: django_session
+App 1835664 output: 
+App 1835664 output: The above exception was the direct cause of the following exception:
+App 1835664 output: 
+App 1835664 output: Traceback (most recent call last):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1835664 output:     response = get_response(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1835664 output:     response = self.process_exception_by_middleware(e, request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1835664 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1835664 output:     if test_func(request.user):
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1835664 output:     lambda u: u.is_authenticated,
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1835664 output:     self._setup()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1835664 output:     self._wrapped = self._setupfunc()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1835664 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1835664 output:     request._cached_user = auth.get_user(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1835664 output:     user_id = _get_user_session_key(request)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1835664 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1835664 output:     return self._session[key]
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1835664 output:     self._session_cache = self.load()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1835664 output:     s = self._get_session_from_db()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1835664 output:     expire_date__gt=timezone.now()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1835664 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1835664 output:     num = len(clone)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1835664 output:     self._fetch_all()
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1835664 output:     self._result_cache = list(self._iterable_class(self))
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1835664 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1835664 output:     cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1835664 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1835664 output:     return executor(sql, params, many, context)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1835664 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1835664 output:     return self.cursor.execute(sql, params)
+App 1835664 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1835664 output:     return Database.Cursor.execute(self, query, params)
+App 1835664 output: django.db.utils.OperationalError: no such table: django_session
+App 1872274 output: Internal Server Error: /
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1872274 output:     return self._session_cache
+App 1872274 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1872274 output: 
+App 1872274 output: During handling of the above exception, another exception occurred:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: sqlite3.OperationalError: no such table: django_session
+App 1872274 output: 
+App 1872274 output: The above exception was the direct cause of the following exception:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1872274 output:     response = get_response(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1872274 output:     response = self.process_exception_by_middleware(e, request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1872274 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1872274 output:     if test_func(request.user):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1872274 output:     lambda u: u.is_authenticated,
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1872274 output:     self._setup()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1872274 output:     self._wrapped = self._setupfunc()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1872274 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1872274 output:     request._cached_user = auth.get_user(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1872274 output:     user_id = _get_user_session_key(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1872274 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1872274 output:     return self._session[key]
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1872274 output:     self._session_cache = self.load()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1872274 output:     s = self._get_session_from_db()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1872274 output:     expire_date__gt=timezone.now()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1872274 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1872274 output:     num = len(clone)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1872274 output:     self._fetch_all()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1872274 output:     self._result_cache = list(self._iterable_class(self))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1872274 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1872274 output:     cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 99, in execute
+App 1872274 output:     return super().execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1872274 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1872274 output:     return executor(sql, params, many, context)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1872274 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: django.db.utils.OperationalError: no such table: django_session
+App 1872274 output: [ pid=1872274, time=2020-03-16 01:38:33,938 ]: Internal Server Error: /
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1872274 output:     return self._session_cache
+App 1872274 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1872274 output: 
+App 1872274 output: During handling of the above exception, another exception occurred:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: sqlite3.OperationalError: no such table: django_session
+App 1872274 output: 
+App 1872274 output: The above exception was the direct cause of the following exception:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1872274 output:     response = get_response(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1872274 output:     response = self.process_exception_by_middleware(e, request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1872274 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1872274 output:     if test_func(request.user):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1872274 output:     lambda u: u.is_authenticated,
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1872274 output:     self._setup()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1872274 output:     self._wrapped = self._setupfunc()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1872274 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1872274 output:     request._cached_user = auth.get_user(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1872274 output:     user_id = _get_user_session_key(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1872274 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1872274 output:     return self._session[key]
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1872274 output:     self._session_cache = self.load()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1872274 output:     s = self._get_session_from_db()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1872274 output:     expire_date__gt=timezone.now()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1872274 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1872274 output:     num = len(clone)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1872274 output:     self._fetch_all()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1872274 output:     self._result_cache = list(self._iterable_class(self))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1872274 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1872274 output:     cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 99, in execute
+App 1872274 output:     return super().execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1872274 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1872274 output:     return executor(sql, params, many, context)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1872274 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: django.db.utils.OperationalError: no such table: django_session
+App 1872274 output: Not Found: /favicon.ico
+App 1872274 output: [ pid=1872274, time=2020-03-16 01:38:34,635 ]: Not Found: /favicon.ico
+App 1872274 output: Internal Server Error: /
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1872274 output:     return self._session_cache
+App 1872274 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1872274 output: 
+App 1872274 output: During handling of the above exception, another exception occurred:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: sqlite3.OperationalError: no such table: django_session
+App 1872274 output: 
+App 1872274 output: The above exception was the direct cause of the following exception:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1872274 output:     response = get_response(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1872274 output:     response = self.process_exception_by_middleware(e, request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1872274 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1872274 output:     if test_func(request.user):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1872274 output:     lambda u: u.is_authenticated,
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1872274 output:     self._setup()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1872274 output:     self._wrapped = self._setupfunc()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1872274 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1872274 output:     request._cached_user = auth.get_user(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1872274 output:     user_id = _get_user_session_key(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1872274 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1872274 output:     return self._session[key]
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1872274 output:     self._session_cache = self.load()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1872274 output:     s = self._get_session_from_db()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1872274 output:     expire_date__gt=timezone.now()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1872274 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1872274 output:     num = len(clone)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1872274 output:     self._fetch_all()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1872274 output:     self._result_cache = list(self._iterable_class(self))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1872274 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1872274 output:     cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 99, in execute
+App 1872274 output:     return super().execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1872274 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1872274 output:     return executor(sql, params, many, context)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1872274 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: django.db.utils.OperationalError: no such table: django_session
+App 1872274 output: [ pid=1872274, time=2020-03-16 01:39:27,789 ]: Internal Server Error: /
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 189, in _get_session
+App 1872274 output:     return self._session_cache
+App 1872274 output: AttributeError: 'SessionStore' object has no attribute '_session_cache'
+App 1872274 output: 
+App 1872274 output: During handling of the above exception, another exception occurred:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: sqlite3.OperationalError: no such table: django_session
+App 1872274 output: 
+App 1872274 output: The above exception was the direct cause of the following exception:
+App 1872274 output: 
+App 1872274 output: Traceback (most recent call last):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1872274 output:     response = get_response(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1872274 output:     response = self.process_exception_by_middleware(e, request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1872274 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+App 1872274 output:     if test_func(request.user):
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 44, in <lambda>
+App 1872274 output:     lambda u: u.is_authenticated,
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+App 1872274 output:     self._setup()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/utils/functional.py", line 392, in _setup
+App 1872274 output:     self._wrapped = self._setupfunc()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 24, in <lambda>
+App 1872274 output:     request.user = SimpleLazyObject(lambda: get_user(request))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/middleware.py", line 12, in get_user
+App 1872274 output:     request._cached_user = auth.get_user(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 182, in get_user
+App 1872274 output:     user_id = _get_user_session_key(request)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 59, in _get_user_session_key
+App 1872274 output:     return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 54, in __getitem__
+App 1872274 output:     return self._session[key]
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 194, in _get_session
+App 1872274 output:     self._session_cache = self.load()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+App 1872274 output:     s = self._get_session_from_db()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py", line 34, in _get_session_from_db
+App 1872274 output:     expire_date__gt=timezone.now()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1872274 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 402, in get
+App 1872274 output:     num = len(clone)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 256, in __len__
+App 1872274 output:     self._fetch_all()
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+App 1872274 output:     self._result_cache = list(self._iterable_class(self))
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+App 1872274 output:     results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1097, in execute_sql
+App 1872274 output:     cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 99, in execute
+App 1872274 output:     return super().execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 67, in execute
+App 1872274 output:     return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+App 1872274 output:     return executor(sql, params, many, context)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+App 1872274 output:     raise dj_exc_value.with_traceback(traceback) from exc_value
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/utils.py", line 84, in _execute
+App 1872274 output:     return self.cursor.execute(sql, params)
+App 1872274 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+App 1872274 output:     return Database.Cursor.execute(self, query, params)
+App 1872274 output: django.db.utils.OperationalError: no such table: django_session
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:40:10,683 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:40:11,121 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:40:14,871 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:40:14,971 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:40:18,161 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:40:18,271 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Internal Server Error: /
+App 1876860 output: Traceback (most recent call last):
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1876860 output:     response = get_response(request)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1876860 output:     response = self.process_exception_by_middleware(e, request)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1876860 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+App 1876860 output:     return view_func(request, *args, **kwargs)
+App 1876860 output:   File "/home/itkfodcz/Elite/projects/views.py", line 12, in index
+App 1876860 output:     supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1876860 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 408, in get
+App 1876860 output:     self.model._meta.object_name
+App 1876860 output: employee.models.SuperVisors.DoesNotExist: SuperVisors matching query does not exist.
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:43:14,359 ]: Internal Server Error: /
+App 1876860 output: Traceback (most recent call last):
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 1876860 output:     response = get_response(request)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+App 1876860 output:     response = self.process_exception_by_middleware(e, request)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+App 1876860 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+App 1876860 output:     return view_func(request, *args, **kwargs)
+App 1876860 output:   File "/home/itkfodcz/Elite/projects/views.py", line 12, in index
+App 1876860 output:     supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+App 1876860 output:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+App 1876860 output:   File "/home/itkfodcz/virtualenv/Elite/3.5/lib/python3.5/site-packages/django/db/models/query.py", line 408, in get
+App 1876860 output:     self.model._meta.object_name
+App 1876860 output: employee.models.SuperVisors.DoesNotExist: SuperVisors matching query does not exist.
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:47:24,682 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:47:24,781 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:47:47,361 ]: Not Found: /login/js/scripts.js
+App 1876860 output: Not Found: /login/js/scripts.js
+App 1876860 output: [ pid=1876860, time=2020-03-16 01:47:47,461 ]: Not Found: /login/js/scripts.js
+App 1911031 output: Not Found: /login/js/scripts.js
+App 1911031 output: [ pid=1911031, time=2020-03-16 01:56:43,424 ]: Not Found: /login/js/scripts.js
+App 1911031 output: Not Found: /login/js/scripts.js
+App 1911031 output: [ pid=1911031, time=2020-03-16 01:56:43,601 ]: Not Found: /login/js/scripts.js
+App 1911031 output: Not Found: /login/js/scripts.js
+App 1911031 output: [ pid=1911031, time=2020-03-16 01:56:53,411 ]: Not Found: /login/js/scripts.js
+App 1911031 output: Not Found: /login/js/scripts.js
+App 1911031 output: [ pid=1911031, time=2020-03-16 01:56:53,541 ]: Not Found: /login/js/scripts.js
