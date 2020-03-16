@@ -53,7 +53,7 @@ def mark_attandance(request,id):
     # here id is the project id
     print(request.user)
     print(SuperVisors.objects.get(project=id))
-    if str(request.user) == str(SuperVisors.objects.get(project=id)): # success
+    if str(request.user) == str(SuperVisors.objects.get(project=id)) or request.user.is_superuser: # success
         return render(request,'employee/attandance.html')
     else:
         return render(request,'projects/404.html')
