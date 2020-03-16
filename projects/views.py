@@ -130,7 +130,10 @@ def edit_project(request,id):
 def all_projects(request):
     project_data = Projects.objects.all().values()
     for i in range(len(project_data)):
-        supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+        try:
+            supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+        except:
+            supervisor = {'name': 'Not Allocated'}
         project_data[i]['supervisor'] = supervisor
         project_data[i]['tender'] = Tender.objects.get(id=project_data[i]['tender_id'])
     return render(request,'projects/project.html',{'projects': project_data})
