@@ -71,17 +71,14 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid">
-                        <h1 class="mt-4 mb-5 mr-5">Edit Tender <a href="../"><button type="button" class=" ml-5 btn btn-primary">Go Back</button></a></h1>
-                        <div class="card mb-4">
+                <main class="ml-5">
+                    <div class="text-center mt-5 mr-5">
+                        <img class="rounded-circle account-img" style="width: 150 px; height: 150px;" src="{{ supervisor.image.url }}">
                     </div>
-                    <form method='POST' enctype= multipart/form-data>
-                        {% csrf_token %}
-                        {{form|crispy}}
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-success mb-5 text-right">Save</button>
-                        </div>
+                    <h3 class="mt-4 mb-5 mr-5">{{supervisor.name}} </h3>
+                    <div class="text-right mr-5">
+                        <a href="/update_supervisor/{{supervisor.id}}"><button type="button" class=" ml-5 btn btn-primary">Update Profile</button></a>
+                    </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">

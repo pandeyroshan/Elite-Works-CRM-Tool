@@ -155,7 +155,10 @@ def add_project(request,id):
 
 @login_required
 def project_details(request,id):
-    supervisor = SuperVisors.objects.get(project=id)
+    try:
+        supervisor = SuperVisors.objects.get(project=id)
+    except:
+        supervisor = {'name' : 'Not Alloted'}
     return render(request,'projects/project_detail.html',{
         'project': Projects.objects.get(id=id),
         'supervisor': supervisor,

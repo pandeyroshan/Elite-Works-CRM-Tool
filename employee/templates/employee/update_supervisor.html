@@ -71,16 +71,25 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main class="ml-5">
                     <div class="container-fluid">
-                        <h1 class="mt-4 mb-5 mr-5">Edit Tender <a href="../"><button type="button" class=" ml-5 btn btn-primary">Go Back</button></a></h1>
-                        <div class="card mb-4">
+                        <h1 class="mt-4 mb-5 mr-5">Update Supervisor <a href="../"><button type="button" class=" ml-5 btn btn-primary">Go Back</button></a></h1>
                     </div>
+                    <!-- <img class="rounded-circle account-img" src="{{ supervisor.image.url }}"> -->
+                    
+                    <!-- <embed
+                        src="{{supervisor.resume.url}}"
+                        type="application/pdf"
+                        frameBorder="0"
+                        scrolling="auto"
+                        height="100%"
+                        width="100%"
+                    ></embed> -->
                     <form method='POST' enctype= multipart/form-data>
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="text-right">
-                            <button type="submit" class="btn btn-success mb-5 text-right">Save</button>
+                            <button type="submit" class="btn btn-success mb-5 text-right">Update</button>
                         </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

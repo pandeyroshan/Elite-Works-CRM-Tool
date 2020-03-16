@@ -22,6 +22,7 @@ urlpatterns = [
     path('add_contractor/<int:id>/',project_view.add_contractor,name='add_contractor'),
     path('edit_tender/<int:id>/',project_view.edit_tender,name='edit_tender'),
     path('supervisor/',emp_view.get_all_supervisor,name='all_supervisor'),
+    path('supervisor/<int:id>',emp_view.supervisor_detail,name='supervisor_detail'),
     path('labour/',emp_view.get_all_employee,name='all_employee'),
     path('projects/',project_view.all_projects,name='all_projects'),
     path('add_project/<int:id>',project_view.add_project,name='add_tender'),
@@ -29,7 +30,8 @@ urlpatterns = [
     path('create_labour/',emp_view.create_labour,name='create_labour'),
     path('project/<int:id>/',project_view.project_details,name='project_detail'),
     path('edit_project/<int:id>',project_view.edit_project,name='edit_project'),
-    path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance')
+    path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance'),
+    path('update_supervisor/<int:id>',emp_view.update_supervisor,name='update_supervisor'),
 ]
 
 
