@@ -3,10 +3,12 @@ from django.contrib.auth.decorators import login_required
 from projects.models import Tender,other_contractors_bid, Projects
 from employee.models import SuperVisors, labour
 from .forms import TenderAdd,ContractorForm,ProjectForm
+import os
 # Create your views here.
 
 @login_required
 def index(request):
+    print(os.environ['PASSCODE'])
     project_data = Projects.objects.all().values()
     for i in range(len(project_data)):
         try:

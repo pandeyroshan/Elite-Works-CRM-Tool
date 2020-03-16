@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'itkfodcz_CRM',
         'USER': 'itkfodcz_roshan',
-        'PASSWORD': '1ED;2?^f+4',
+        'PASSWORD': os.environ['PASSCODE'],
         'HOST': 'ray.herosite.pro',   # MilesWeb
         'PORT': '3306',
     }
