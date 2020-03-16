@@ -48,6 +48,7 @@ def add_tender(request):
         form = TenderAdd(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            return redirect('/tender/')
     else:
         form = TenderAdd()
     return render(request,'projects/add_tender.html',{'form' : form})
@@ -90,6 +91,7 @@ def edit_tender(request,id):
             tender.tender_purchase_reciept = request.FILES.get('tender_purchase_reciept')
             tender.tender_confirmation_reciept = request.FILES.get('tender_confirmation_reciept')
             tender.save()
+            return redirect('/tender/')
         pass
     else:
         tender = Tender.objects.get(id=id)
@@ -141,6 +143,7 @@ def add_project(request,id):
             form_data = form.save(commit=False)
             form_data.tender = Tender.objects.get(id=id)
             form_data.save()
+            return redirect('/projects/')
         pass
     else:
         form = ProjectForm()
