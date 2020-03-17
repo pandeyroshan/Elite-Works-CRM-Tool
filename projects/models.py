@@ -1,8 +1,10 @@
 from django.db import models
+import uuid
 from django.utils import timezone
 # Create your models here.
 
 class Tender(models.Model):
+    uuid_no = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     tender_number = models.CharField('Tender Number',max_length=500)
     tender_name = models.CharField('Name of Work',max_length=500)
     tender_submission_date = models.DateField('Tender Submission Date',default=timezone.now)

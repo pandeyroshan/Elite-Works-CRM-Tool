@@ -34,8 +34,11 @@ def tender(request):
     return render(request,'projects/tender_page.html',context)
 
 @login_required
-def tender_details(request,id):
-    tender_object = Tender.objects.get(id=id)
+def tender_details(request,uuid_no):
+    try:
+        tender_object = Tender.objects.get(uuid_no=uuid_no)
+    except:
+        tender_object = {}
     other_contractor = other_contractors_bid.objects.filter(tender=tender_object)
     context = {
         'tender_object' : tender_object,
@@ -60,6 +63,8 @@ def my_tender(request):
     context = {
         'tender_list': tender_list
     }
+    for data in tender_list:
+        print(data.uuid_no)
     return render(request,'projects/my_tender.html',context)
 
 @login_required
@@ -166,3 +171,7 @@ def project_details(request,id):
         'total_labour': len(labour.objects.all().filter(project = id)),
         'employee' : labour.objects.all().filter(project=id)
         })
+
+@login_required
+def testing(request):
+    return render(request,'projects/testing.html')

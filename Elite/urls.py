@@ -18,7 +18,7 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL),name='logout'),
     path('',project_view.index,name='index'),
     path('tender/',project_view.tender,name='tender'),
-    path('tender/<int:id>/',project_view.tender_details,name='tender_details'),
+    path('tender/<slug:uuid_no>/',project_view.tender_details,name='tender_details'),
     path('add_tender/',project_view.add_tender,name='add_tender'),
     path('my_tender/',project_view.my_tender,name='my_tender'),
     path('add_contractor/<int:id>/',project_view.add_contractor,name='add_contractor'),
@@ -34,6 +34,7 @@ urlpatterns = [
     path('edit_project/<int:id>',project_view.edit_project,name='edit_project'),
     path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance'),
     path('update_supervisor/<int:id>',emp_view.update_supervisor,name='update_supervisor'),
+    path('testing/',project_view.testing,name='testing')
 ]
 
 
