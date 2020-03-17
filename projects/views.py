@@ -8,7 +8,6 @@ import os
 
 @login_required
 def index(request):
-    print(os.environ['PASSCODE'])
     project_data = Projects.objects.all().values()
     for i in range(len(project_data)):
         try:
