@@ -5,13 +5,15 @@ from employee import views as emp_view
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include
 
 
 handler404 = 'employee.views.handler404'
 handler500 = 'employee.views.handler500'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('rotion/', admin.site.urls),
     path('login/',auth_views.LoginView.as_view(template_name='projects/login.html'),name='login'),
     path('logout/',auth_views.LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL),name='logout'),
     path('',project_view.index,name='index'),

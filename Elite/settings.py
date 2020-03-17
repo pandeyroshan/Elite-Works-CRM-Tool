@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'employee',
     'projects',
     'crispy_forms',
+    'admin_honeypot'
 ]
 
 MIDDLEWARE = [
