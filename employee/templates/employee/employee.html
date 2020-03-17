@@ -75,8 +75,11 @@
                     <div class="text-center mt-5 mr-5">
                         <img class="rounded-circle account-img" style="width: 150 px; height: 150px;" src="{{ supervisor.image.url }}">
                     </div>
-                    <h3 class="mt-4 mb-5 mr-5">{{supervisor.name}} </h3>
-                    <div class="text-right mr-5">
+                    <h5 class="mt-4 mb-5 mr-5 text-center">{{supervisor.name}} is supervising <a href="/project/{{supervisor.project.id}}">{{supervisor.project.project_name}}</a>, a project under <a href="/tender/{{supervisor.project.tender.id}}">{{supervisor.project.tender}}</a> </h5>
+                    <p>Contact Number: {{supervisor.mobile_number}} | {{supervisor.alter_number}} <br>Address: {{supervisor.address}}<br>Aadhar Number: {{supervisor.aadhar_number}} <a href="{{supervisor.aadhar_photo.url}}" target="_blank">&#8599;</a><br>PAN Number: {{supervisor.pan_number}} <a href="{{supervisor.pan_photo.url}}" target="_blank">&#8599;</a><br>Highest Qualification:{{supervisor.highest_qual}}<a href="{{supervisor.highest_qual_photo.url}}" target="_blank">&#8599;</a><br>UAN Number: {{supervisor.UAN_number}}</p>
+                    <hr>
+                    <p>Here are {{supervisor.name}}'s files:<br> &#x2192; 10th Certificate<br>&#x2192; 12th Certificate<br>&#x2192; Highest Qualification<br>&#x2192; Techincal Certificate</p>
+                    <div class="text-right mr-5 mb-5">
                         <a href="/update_supervisor/{{supervisor.id}}"><button type="button" class=" ml-5 btn btn-primary">Update Profile</button></a>
                     </div>
                 </main>

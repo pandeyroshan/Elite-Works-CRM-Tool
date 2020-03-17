@@ -44,7 +44,7 @@ class Projects(models.Model):
     use_less = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.tender.tender_number+" - "+self.project_name+str(self.id)
+        return self.tender.tender_number+" - "+self.project_name
     
     class Meta:
         verbose_name = 'Project'
