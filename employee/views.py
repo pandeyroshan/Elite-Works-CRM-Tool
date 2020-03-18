@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import SuperVisors,labour
+from .models import SuperVisors,labour,Attendance
 from employee.models import Projects
 from .forms import SupervisorForm,labourForm,SupervisorUpdateForm
 from django.contrib.auth.models import User
@@ -10,7 +10,6 @@ def get_all_supervisor(request):
         'supervisors' : SuperVisors.objects.all()
     }
     return render(request,'employee/all_supervisor.html',context)
-    pass
 
 def get_all_employee(request):
     context = {
@@ -51,11 +50,28 @@ def create_labour(request):
     return render(request,'employee/add_labour.html',{'form':form})
 
 def mark_attandance(request,id):
-    # here id is the project id
-    print(request.user)
-    print(SuperVisors.objects.get(project=id))
     if str(request.user) == str(SuperVisors.objects.get(project=id)) or request.user.is_superuser: # success
-        return render(request,'employee/attandance.html')
+        if request.method == 'POST':
+            print(request.POST)
+            project = Projects.objects.get(id=id)
+            labours = labour.objects.all().filter(project=project)
+            date = request.POST.get('date')
+            shift = request.POST.get('shift')
+            for data in labours:
+                if request.POST.get(str(data.id))=='P':
+                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift,is_present=True)
+                else:
+                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift,is_present=False)
+                att_object.save()
+            return redirect('/project/'+str(id))
+        else:
+            project = Projects.objects.get(id=id)
+            labours = labour.objects.all().filter(project=project)
+            return render(request,'employee/attandance.html',{
+                'project' : project,
+                'labours' : labours,
+                'total_labour': len(labours)
+            })
     else:
         return render(request,'projects/404.html')
 
