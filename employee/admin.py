@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import SuperVisors,labour
+from .models import SuperVisors,labour,Attendance
 # Register your models here.
-
 admin.site.site_header='Elite Works'
 
 
@@ -23,3 +22,4 @@ class labourAdmin(admin.ModelAdmin):
 
 admin.site.register(SuperVisors)
 admin.site.register(labour,labourAdmin)
+admin.site.register(Attendance)
