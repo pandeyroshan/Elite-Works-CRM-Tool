@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Elite.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql', 
-#         'NAME': 'CRM',
+#         'NAME': 'NEW',
 #         'USER': 'root',
 #         'PASSWORD': 'root',
 #         'HOST': 'localhost',   # Localhost
