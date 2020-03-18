@@ -75,7 +75,7 @@ class Attendance(models.Model):
     is_present = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.labour+self.is_present
+        return str(self.labour)+' - '+str(self.is_present)
     
     class Meta:
         verbose_name = 'Attandance'
