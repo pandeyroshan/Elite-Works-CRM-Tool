@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from projects import views as project_view
 from employee import views as emp_view
 from django.contrib.auth import views as auth_views
@@ -33,6 +33,8 @@ urlpatterns = [
     path('project/<int:id>/',project_view.project_details,name='project_detail'),
     path('edit_project/<int:id>',project_view.edit_project,name='edit_project'),
     path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance'),
+    path('view_attandance/<int:id>',emp_view.view_attandance,name='view_attandance'),
+    path('detail_attandance/<int:year>/<int:month>/<int:day>/<slug:shift>/<int:id>/',emp_view.detail_attandance,name='detail_attandance'),
     path('update_supervisor/<int:id>',emp_view.update_supervisor,name='update_supervisor'),
     path('testing/',project_view.testing,name='testing')
 ]
