@@ -3,6 +3,9 @@ from .models import SuperVisors,labour,Attendance
 from employee.models import Projects
 from .forms import SupervisorForm,labourForm,SupervisorUpdateForm
 from django.contrib.auth.models import User
+from django.db.models import Count
+from django.db.models.query import QuerySet
+import datetime
 # Create your views here.
 
 def get_all_supervisor(request):
@@ -118,3 +121,43 @@ def update_employee(request,id):
 def supervisor_detail(request,id):
     supervisor = SuperVisors.objects.get(id=id)
     return render(request,'employee/employee.html',{'supervisor':supervisor})
+
+
+def view_attandance(request,id):
+    project = Projects.objects.get(id=id)
+    labours = labour.objects.all().filter(project=project)
+    supervisor = SuperVisors.objects.get(project=id)
+    raw_data = Attendance.objects.filter(project=project).values('date','shift').distinct().order_by('-date')
+    for i in range(len(raw_data)): #add statistics in every individual data
+        total = 0
+        present = 0
+        absent = 0
+        date = raw_data[i]['date']
+        shift = raw_data[i]['shift']
+        date_shift = Attendance.objects.all().filter(project=project,date=date,shift=shift).values('is_present')
+        for data in date_shift:
+            if data['is_present'] == True:
+                present+=1
+            else:
+                absent+=1
+        raw_data[i]['present'] = present
+        raw_data[i]['absent'] = absent
+        print(date_shift,end='\n\n')
+    print(raw_data)
+    return render(request,'employee/show_attandance.html',{
+        'project': project,
+        'total_labour':len(labours),
+        'supervisor':supervisor,
+        'major_data':raw_data
+    })
+
+def detail_attandance(request,year,month,day,shift,id):
+    date = datetime.date(year,month,day)
+    att_data = Attendance.objects.all().filter(project=Projects.objects.get(id=id),date=date,shift=shift)
+    return render(request,'employee/detail_attandance.html',{
+        'att_data' : att_data,
+        'date' : date,
+        'shift' : shift,
+        'total' : len(att_data),
+        'project' : Projects.objects.get(id=id)
+    })
