@@ -36,7 +36,7 @@ urlpatterns = [
     path('view_attandance/<int:id>',emp_view.view_attandance,name='view_attandance'),
     path('detail_attandance/<int:year>/<int:month>/<int:day>/<slug:shift>/<int:id>/',emp_view.detail_attandance,name='detail_attandance'),
     path('update_supervisor/<int:id>',emp_view.update_supervisor,name='update_supervisor'),
-    path('testing/',project_view.testing,name='testing')
+    path('testing/',project_view.testing,name='testing'),
 ]
 
 

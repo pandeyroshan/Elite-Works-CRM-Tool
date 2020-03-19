@@ -37,12 +37,20 @@ def tender(request):
 def tender_details(request,uuid_no):
     try:
         tender_object = Tender.objects.get(uuid_no=uuid_no)
+        projects = Projects.objects.all().filter(tender=tender_object).values()
     except:
         tender_object = {}
     other_contractor = other_contractors_bid.objects.filter(tender=tender_object)
+    for i in range(len(projects)):
+        try:
+            supervisor = SuperVisors.objects.get(project=projects[i]['id'])
+        except:
+            supervisor = {'name': 'Not Allocated'}
+        projects[i]['supervisor'] = supervisor
     context = {
         'tender_object' : tender_object,
-        'other_contractors' : other_contractor
+        'other_contractors' : other_contractor,
+        'projects' : projects
     }
     return render(request,'projects/tender_detail.html',context)
 

@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 from django.db.models.query import QuerySet
 import datetime
+import bs4 as bs
+import urllib.request
 # Create your views here.
 
 def get_all_supervisor(request):

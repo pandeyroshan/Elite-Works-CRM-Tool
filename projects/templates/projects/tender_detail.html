@@ -78,7 +78,32 @@
                         <h4 class="font-weight-light">Physical Submission Date: {{tender_object.physical_submission_date}}</h4>
                         <h4 class="font-weight-light">Bid Status: {{tender_object.bid_status}}</h4>
                         <h4 class="font-weight-light mb-4 text-success">Prize Bid: {{tender_object.prize_bid}}</h4>
-                        <div class="card mb-4">
+                        <div class="card mb-6">
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Project Lists</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No.</th>
+                                                <th>Name</th>
+                                                <th>Start Date</th>
+                                                <th>Supervisor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {%for project in projects%}
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{project.project_name}}</td>
+                                                <td>{{project.start_date}}</td>
+                                                <td>{{project.supervisor.name}}</td>
+                                            </tr>
+                                            {%endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Other Contractor Lists</div>
                             <div class="card-body">
                                 <div class="table-responsive">
