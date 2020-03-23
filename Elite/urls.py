@@ -37,6 +37,8 @@ urlpatterns = [
     path('detail_attandance/<int:year>/<int:month>/<int:day>/<slug:shift>/<int:id>/',emp_view.detail_attandance,name='detail_attandance'),
     path('update_supervisor/<int:id>',emp_view.update_supervisor,name='update_supervisor'),
     path('testing/',project_view.testing,name='testing'),
+    path('bug/',project_view.add_bug,name='add_bug'),
+    path('feature/',project_view.feature,name='feature')
 ]
 
 
