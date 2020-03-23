@@ -200,7 +200,7 @@ def add_bug(request):
             form_data = form.save(commit=False)
             form_data.ticket = ("#MS"+str(request.POST.get('heading')).replace(" ", "")[:3]+str(len(Bugs.objects.all()))+"RP").upper()
             form_data.save()
-            messages.success(request, 'Your response has been recorded', extra_tags='alert')
+            messages.success(request, 'We have recorded your response, here is your Ticket ID: '+str(form_data.ticket))
             return redirect('/')
     else:
         form = BugForm()
