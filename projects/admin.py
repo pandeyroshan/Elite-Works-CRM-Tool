@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import other_contractors_bid, Tender,Projects
+from .models import other_contractors_bid, Tender,Projects, Bugs, Features
 from django.contrib.auth.models import Group
 from django.contrib.admin import AdminSite
 # Register your models here.
@@ -41,3 +41,5 @@ admin.site.register(Tender,TenderAdmin)
 admin.site.unregister(Group)
 admin.site.register(other_contractors_bid)
 admin.site.register(Projects)
+admin.site.register(Bugs)
+admin.site.register(Features)
