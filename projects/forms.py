@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tender,other_contractors_bid, Projects
+from .models import Tender,other_contractors_bid, Projects, Bugs, Features
 
 class TenderAdd(forms.ModelForm):
 
@@ -17,3 +17,14 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Projects
         fields = ('project_name','start_date',)
+
+class BugForm(forms.ModelForm):
+
+    class Meta:
+        model = Bugs
+        fields = '__all__'
+
+class FeatureForm(forms.ModelForm):
+    class Meta:
+        model = Features
+        fields = '__all__'
