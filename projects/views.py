@@ -2,7 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from projects.models import Tender,other_contractors_bid, Projects
 from employee.models import SuperVisors, labour
-from .forms import TenderAdd,ContractorForm,ProjectForm
+from .forms import TenderAdd,ContractorForm,ProjectForm,BugForm,FeatureForm
+from django.contrib import messages
 import os
 # Create your views here.
 
@@ -183,3 +184,25 @@ def project_details(request,id):
 @login_required
 def testing(request):
     return render(request,'projects/testing.html')
+
+
+def add_bug(request):
+    if request.method == 'POST':
+        form = BugForm(request.POST)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Your response has been recorded', extra_tags='alert')
+            return redirect('/')
+    else:
+        form = BugForm()
+    return render(request,'projects/bugs.html',{'form':form})
+
+def feature(request):
+    if request.method == 'POST':
+        form = FeatureForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('/')
+    else:
+        form = FeatureForm()
+    return render(request,'projects/features.html',{'form':form})
