@@ -22,7 +22,7 @@ class BugForm(forms.ModelForm):
 
     class Meta:
         model = Bugs
-        fields = '__all__'
+        exclude = ('ticket','bug_status',)
 
 class FeatureForm(forms.ModelForm):
     class Meta:
