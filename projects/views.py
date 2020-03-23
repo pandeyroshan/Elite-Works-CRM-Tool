@@ -9,6 +9,13 @@ import os
 
 @login_required
 def index(request):
+    if request.method=='POST':
+        ticket = request.POST.get('ticket')
+        bug = Bugs.objects.all().filter(ticket=ticket)
+        if bug:
+            return render(request,'projects/issue.html',{'bug':bug[0]})
+        else:
+            return render(request,'projects/issue.html',{'message':'Sorry! No such Ticket ID Exist, Kindly recheck!!!'})
     project_data = Projects.objects.all().values()
     for i in range(len(project_data)):
         try:
@@ -190,7 +197,9 @@ def add_bug(request):
     if request.method == 'POST':
         form = BugForm(request.POST,request.FILES)
         if form.is_valid:
-            form.save()
+            form_data = form.save(commit=False)
+            form_data.ticket = ("#MS"+str(request.POST.get('heading')).replace(" ", "")[:3]+str(len(Bugs.objects.all()))+"RP").upper()
+            form_data.save()
             messages.success(request, 'Your response has been recorded', extra_tags='alert')
             return redirect('/')
     else:
