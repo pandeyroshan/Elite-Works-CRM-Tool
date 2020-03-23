@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from projects.models import Tender,other_contractors_bid, Projects
+from projects.models import Tender,other_contractors_bid, Projects, Bugs
 from employee.models import SuperVisors, labour
 from .forms import TenderAdd,ContractorForm,ProjectForm,BugForm,FeatureForm
 from django.contrib import messages
@@ -188,14 +188,15 @@ def testing(request):
 
 def add_bug(request):
     if request.method == 'POST':
-        form = BugForm(request.POST)
+        form = BugForm(request.POST,request.FILES)
         if form.is_valid:
             form.save()
             messages.success(request, 'Your response has been recorded', extra_tags='alert')
             return redirect('/')
     else:
+        bug = Bugs.objects.all()[0]
         form = BugForm()
-    return render(request,'projects/bugs.html',{'form':form})
+    return render(request,'projects/bugs.html',{'form':form,'bug':bug})
 
 def feature(request):
     if request.method == 'POST':

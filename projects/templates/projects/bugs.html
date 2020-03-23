@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1 class="text-center text-success font-weight-light mt-3">BUG REPORT</h1>
-        <form method="POST">
+        <form method="POST"  enctype="multipart/form-data">
             <div class="form-group ml-5 mr-5">
                 {% csrf_token %}
                 {{form|crispy}}

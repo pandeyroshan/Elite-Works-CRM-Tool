@@ -65,6 +65,7 @@ class Permissions(models.Model):
 class Bugs(models.Model):
     heading = models.CharField(max_length=500)
     description = models.TextField()
+    image = models.FileField(upload_to='Bugs',blank=True)
     date = models.DateField(auto_now_add=True)
 
     class Meta:
