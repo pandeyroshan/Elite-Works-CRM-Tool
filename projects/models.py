@@ -63,10 +63,18 @@ class Permissions(models.Model):
         verbose_name_plural = 'Permissions'
 
 class Bugs(models.Model):
+    ticket = models.CharField(max_length=30,blank='False')
     heading = models.CharField(max_length=500)
     description = models.TextField()
     image = models.FileField(upload_to='Bugs',blank=True)
     date = models.DateField(auto_now_add=True)
+    Unseen = 'Unseen'
+    Seen = 'Seen'
+    Processing = 'Processing'
+    Done = 'Done'
+    status = [(Unseen,'Unseen'),(Seen,'Seen'),(Processing,'Processing'),(Done,'Done')]
+    bug_status = models.CharField('Bug Status',max_length=30,choices=status,default=Unseen)
+    message = models.TextField(blank=True)   
 
     class Meta:
         verbose_name = 'Bugs'
