@@ -194,9 +194,8 @@ def add_bug(request):
             messages.success(request, 'Your response has been recorded', extra_tags='alert')
             return redirect('/')
     else:
-        bug = Bugs.objects.all()[0]
         form = BugForm()
-    return render(request,'projects/bugs.html',{'form':form,'bug':bug})
+    return render(request,'projects/bugs.html',{'form':form})
 
 def feature(request):
     if request.method == 'POST':
