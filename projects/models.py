@@ -61,3 +61,27 @@ class Permissions(models.Model):
     class Meta:
         verbose_name = 'Permissions'
         verbose_name_plural = 'Permissions'
+
+class Bugs(models.Model):
+    heading = models.CharField(max_length=500)
+    description = models.TextField()
+    date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Bugs'
+        verbose_name_plural = 'Bugs'
+    
+    def __str__(self):
+        return self.heading[:50]
+
+class Features(models.Model):
+    heading = models.CharField(max_length=500)
+    description = models.TextField()
+    date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Feature'
+        verbose_name_plural = 'Features'
+    
+    def __str__(self):
+        return self.heading[:50]
