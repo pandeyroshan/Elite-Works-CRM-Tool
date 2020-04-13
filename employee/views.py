@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import SuperVisors,labour,Attendance
+from django.contrib.auth.decorators import login_required
 from employee.models import Projects
 from .forms import SupervisorForm,labourForm,SupervisorUpdateForm
 from django.contrib.auth.models import User

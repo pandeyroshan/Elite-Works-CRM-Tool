@@ -77,27 +77,27 @@ WSGI_APPLICATION = 'Elite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql', 
-#         'NAME': 'NEW',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#         'HOST': 'localhost',   # Localhost
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'itkfodcz_CRM',
-        'USER': 'itkfodcz_roshan',
-        'PASSWORD': '1ED;2?^f+4',
-        'HOST': 'ray.herosite.pro',   # MilesWeb
+        'NAME': 'NEW',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',   # Localhost
         'PORT': '3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'itkfodcz_CRM',
+#         'USER': 'itkfodcz_roshan',
+#         'PASSWORD': '1ED;2?^f+4',
+#         'HOST': 'ray.herosite.pro',   # MilesWeb
+#         'PORT': '3306',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
