@@ -4,11 +4,13 @@ from projects.models import Tender,other_contractors_bid, Projects, Bugs
 from employee.models import SuperVisors, labour
 from .forms import TenderAdd,ContractorForm,ProjectForm,BugForm,FeatureForm
 from django.contrib import messages
-import os
+from .server import check_servers
 # Create your views here.
 
 @login_required
 def index(request):
+    if not check_servers():
+        return render(request,'projects/404.html')
     if request.method=='POST':
         ticket = request.POST.get('ticket')
         bug = Bugs.objects.all().filter(ticket=ticket)
