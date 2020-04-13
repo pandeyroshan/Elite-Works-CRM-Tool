@@ -10,6 +10,7 @@ import bs4 as bs
 import urllib.request
 # Create your views here.
 
+@login_required
 def get_all_supervisor(request):
     context = {
         'supervisors' : SuperVisors.objects.all()
@@ -22,6 +23,7 @@ def get_all_employee(request):
     }
     return render(request,'employee/all_employee.html',context)
 
+@login_required
 def create_super(request):
     if request.method == 'POST':
         form = SupervisorForm(request.POST,request.FILES)
@@ -44,6 +46,7 @@ def handler404(request,exception):
 def handler500(request):
     return render(request,'projects/404.html')
 
+@login_required
 def create_labour(request):
     if request.method == 'POST':
         form = labourForm(request.POST,request.FILES)
@@ -54,6 +57,7 @@ def create_labour(request):
         form = labourForm()
     return render(request,'employee/add_labour.html',{'form':form})
 
+@login_required
 def mark_attandance(request,id):
     if str(request.user) == str(SuperVisors.objects.get(project=id)) or request.user.is_superuser: # success
         if request.method == 'POST':
@@ -80,6 +84,7 @@ def mark_attandance(request,id):
     else:
         return render(request,'projects/404.html')
 
+@login_required
 def update_supervisor(request,id):
     if request.method=='POST':
         print(request.POST)
@@ -117,14 +122,16 @@ def update_supervisor(request,id):
         })
         return render(request,'employee/update_supervisor.html',{'form': form,})
 
+@login_required
 def update_employee(request,id):
     pass
 
+@login_required
 def supervisor_detail(request,id):
     supervisor = SuperVisors.objects.get(id=id)
     return render(request,'employee/employee.html',{'supervisor':supervisor})
 
-
+@login_required
 def view_attandance(request,id):
     project = Projects.objects.get(id=id)
     labours = labour.objects.all().filter(project=project)
@@ -153,6 +160,7 @@ def view_attandance(request,id):
         'major_data':raw_data
     })
 
+@login_required
 def detail_attandance(request,year,month,day,shift,id):
     date = datetime.date(year,month,day)
     att_data = Attendance.objects.all().filter(project=Projects.objects.get(id=id),date=date,shift=shift)
