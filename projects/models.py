@@ -7,16 +7,18 @@ class Tender(models.Model):
     uuid_no = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     tender_number = models.CharField('Tender Number',max_length=500)
     tender_name = models.CharField('Name of Work',max_length=500)
+    tender_description = models.TextField()
     tender_submission_date = models.DateField('Tender Submission Date',default=timezone.now)
     tender_purchase_reciept = models.FileField('Tender Purchase Reciept')
     tender_confirmation_reciept = models.FileField('Tender Confirmation Reciept')
     physical_submission_date = models.DateField('Physical Submission Date',default=timezone.now)
-    tech_bid_opening_date = models.DateField('Technical Bid Opening Bid',default=timezone.now)
+    tech_bid_opening_date = models.DateField('Technical Bid Opening Date',default=timezone.now)
     Yes = 'Yes'
     No = 'No'
     status = [(Yes, 'Yes'),(No, 'No')]
     bid_status = models.CharField('Bid Status',max_length=10,choices=status,default=No)
-    prize_bid = models.CharField('Prize Bid',max_length=50)
+    bid_price_opening_date = models.DateField('Bid price opening date',blank=True)
+    prize_bid = models.CharField('Bid Price',max_length=50)
 
     def __str__(self):
         return self.tender_number
