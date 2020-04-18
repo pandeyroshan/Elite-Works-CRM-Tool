@@ -72,7 +72,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4 mb-5 mr-5">{{tender_object.tender_name}} - {{tender_object.tender_number}} <a href="/edit_tender/{{tender_object.id}}"><button type="button" class="ml-3 btn btn-danger mr-3">Edit Tender</button></a> <a href="/add_contractor/{{tender_object.id}}"><button type="button" class="btn btn-success mr-3">Add Other Contractor</button></a> {%if tender_object.bid_status == 'Yes' %}<a href="/add_project/{{tender_object.id}}"><button type="button" class="btn btn-success">Allocate Project</button></a>{%endif%}</h1>
+                        <h4 class="mt-4 mb-5 mr-5">{{tender_object.tender_name}} - {{tender_object.tender_number}} <a href="/edit_tender/{{tender_object.id}}"><button type="button" class="ml-3 btn btn-danger mr-3">Edit Tender</button></a> <a href="/add_contractor/{{tender_object.id}}"><button type="button" class="btn btn-success mr-3">Add Other Contractor</button></a> {%if tender_object.bid_status == 'Yes' %}<a href="/add_project/{{tender_object.id}}"><button type="button" class="btn btn-success">Allocate Project</button></a>{%endif%}</h4>
                         <hr><br>
                         <h4 class="font-weight-light">Submission Date: {{tender_object.tender_submission_date}}</h4>
                         <h4 class="font-weight-light">Physical Submission Date: {{tender_object.physical_submission_date}}</h4>
