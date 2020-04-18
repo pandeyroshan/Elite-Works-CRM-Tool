@@ -9,8 +9,6 @@ from .server import check_servers
 
 @login_required
 def index(request):
-    if not check_servers():
-        return render(request,'projects/404.html')
     if request.method=='POST':
         ticket = request.POST.get('ticket')
         bug = Bugs.objects.all().filter(ticket=ticket)
