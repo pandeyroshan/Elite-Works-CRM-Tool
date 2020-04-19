@@ -92,7 +92,7 @@ def add_contractor(request,id):
             form_data = form.save(commit=False)
             form_data.tender = Tender.objects.get(id=id)
             form_data.save()
-            return redirect('/tender')
+            return redirect('/tender/'+str(Tender.objects.get(id=id).uuid_no))
     else:
         form = ContractorForm()
     return render(request,'projects/add_contractor.html',{'form':form,'tender':tender})

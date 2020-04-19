@@ -71,16 +71,16 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main class="ml-3 mr-3">
                     <div class="container-fluid">
                         <h1 class="mt-4 mb-5 mr-5">Add Tender <a href="../"><button type="button" class=" ml-5 btn btn-primary">Go Back</button></a></h1>
-                        <div class="card mb-4">
                     </div>
                     <form method='POST' enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="text-right">
-                            <button type="submit" class="btn btn-success mb-5 text-right">Submit</button>
+                            <button type="submit" value="a" class="btn btn-success mb-5 text-right">Add</button>
+                            <button type="submit" value="saa" class="btn btn-success mb-5 text-right">Save and add another</button>
                         </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
