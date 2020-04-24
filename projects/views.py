@@ -172,7 +172,7 @@ def add_project(request,id):
             form_data = form.save(commit=False)
             form_data.tender = Tender.objects.get(id=id)
             form_data.save()
-            return redirect('/projects/')
+            return redirect('/tender/'+str(Tender.objects.get(id=id).uuid_no))
         pass
     else:
         form = ProjectForm()

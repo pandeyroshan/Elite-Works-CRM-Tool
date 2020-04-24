@@ -5,6 +5,13 @@ class SupervisorForm(forms.ModelForm):
     class Meta:
         model = SuperVisors
         fields = '__all__'
+        widgets = {
+            'password': forms.PasswordInput(),
+            're_password': forms.PasswordInput()
+        }
+        labels = {
+            "project": "Project | To select multiple hold the ctrl key while selecting"
+        }
 
 class labourForm(forms.ModelForm):
     class Meta:
