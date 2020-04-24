@@ -38,7 +38,9 @@ urlpatterns = [
     path('update_supervisor/<int:id>',emp_view.update_supervisor,name='update_supervisor'),
     path('testing/',project_view.testing,name='testing'),
     path('bug/',project_view.add_bug,name='add_bug'),
-    path('feature/',project_view.feature,name='feature')
+    path('feature/',project_view.feature,name='feature'),
+    path('update_contractor/<int:id>/<int:tid>/',project_view.update_contractor,name='update_contractor'),
+    path('delete_contractor/<int:id>/',project_view.delete_contractor,name='delete_contractor')
 ]
 
 

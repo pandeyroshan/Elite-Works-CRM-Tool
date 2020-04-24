@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from projects.models import Tender,other_contractors_bid, Projects, Bugs
@@ -28,7 +29,7 @@ def index(request):
         'total_tender' : len(Tender.objects.all()),
         'success_tender' : len(Tender.objects.all().filter(bid_status='Yes')),
         'projects' : len(Projects.objects.all()),
-        'SuperVisors': len(SuperVisors.objects.all()),
+        'SuperVisors': 0,
         'all_project': project_data
     }
     return render(request,'projects/index.html',context)
@@ -92,7 +93,10 @@ def add_contractor(request,id):
             form_data = form.save(commit=False)
             form_data.tender = Tender.objects.get(id=id)
             form_data.save()
-            return redirect('/tender/'+str(Tender.objects.get(id=id).uuid_no))
+            if len(request.POST.get('nextStep')) < 8:
+                return redirect('/tender/'+str(Tender.objects.get(id=id).uuid_no))
+            else:
+                return redirect('/add_contractor/'+str(id))
     else:
         form = ContractorForm()
     return render(request,'projects/add_contractor.html',{'form':form,'tender':tender})
@@ -215,3 +219,29 @@ def feature(request):
     else:
         form = FeatureForm()
     return render(request,'projects/features.html',{'form':form})
+
+
+# Bug Fixes 
+
+
+def update_contractor(request,id,tid):
+    obj = other_contractors_bid.objects.get(id=id)
+    if request.method == 'POST':
+        form = ContractorForm(request.POST)
+        if form.is_valid:
+            obj.contractor_info = request.POST.get('contractor_info')
+            obj.contractor_price = request.POST.get('contractor_price')
+            obj.save()
+            tender = Tender.objects.get(id=tid)
+            return redirect('/tender/'+str(tender.uuid_no))
+    form = ContractorForm(initial={
+        'tender' : obj.tender,
+        'contractor_info' : obj.contractor_info,
+        'contractor_price' : obj.contractor_price
+    })
+    return render(request,'projects/edit_contractor.html',{'form': form})
+
+def delete_contractor(request,id):
+    obj = other_contractors_bid.objects.get(id=id)
+    obj.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

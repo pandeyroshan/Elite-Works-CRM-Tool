@@ -7,7 +7,7 @@ import requests
 
 
 class SuperVisors(models.Model):
-    project = models.OneToOneField(Projects,on_delete=models.CASCADE,null=True)
+    project = models.ManyToManyField(Projects,blank=True)
     username = models.CharField(max_length=50,blank=False)
     password = models.CharField(max_length=50,blank=False)
     name = models.CharField('Name', max_length=250,blank=False)
@@ -35,7 +35,6 @@ class SuperVisors(models.Model):
     class Meta:
         verbose_name = 'Supervisors List'
         verbose_name_plural = 'Supervisors List'
-        unique_together = ('project', 'username',)
 
 class labour(models.Model):
     project = models.ForeignKey(Projects,on_delete=models.CASCADE,null=True)
