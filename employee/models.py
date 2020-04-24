@@ -9,8 +9,10 @@ import requests
 class SuperVisors(models.Model):
     project = models.ManyToManyField(Projects)
     username = models.CharField(max_length=50,blank=False)
-    password = models.CharField(max_length=50,blank=False)
+    password = models.CharField('Type password',max_length=50,blank=False)
+    re_password = models.CharField('Retype password',max_length=50,blank=False)
     name = models.CharField('Name', max_length=250,blank=False)
+    dateofbirth = models.DateField('Date of Birth',default=timezone.now)
     image = models.FileField('Image',upload_to='Supervisor_Images',blank=True)
     mobile_number = models.CharField('Mobile Number',max_length=15)
     alter_number = models.CharField('Alternate Number',max_length=15)
@@ -39,6 +41,7 @@ class SuperVisors(models.Model):
 class labour(models.Model):
     project = models.ForeignKey(Projects,on_delete=models.CASCADE,null=True)
     name = models.CharField('Name', max_length=250,blank=False)
+    dateofbirth = models.DateField('Date of Birth',default=timezone.now)
     image = models.FileField('Image',upload_to='labour_Images',blank=True)
     mobile_number = models.CharField('Mobile Number',max_length=15)
     alter_number = models.CharField('Alternate Number',max_length=15)
