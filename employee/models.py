@@ -7,7 +7,7 @@ import requests
 
 
 class SuperVisors(models.Model):
-    project = models.ManyToManyField(Projects,blank=True)
+    project = models.ManyToManyField(Projects)
     username = models.CharField(max_length=50,blank=False)
     password = models.CharField(max_length=50,blank=False)
     name = models.CharField('Name', max_length=250,blank=False)
