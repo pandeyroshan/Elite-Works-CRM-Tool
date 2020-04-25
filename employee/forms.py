@@ -1,5 +1,6 @@
 from django import forms
 from .models import SuperVisors,labour
+from bootstrap_datepicker_plus import DatePickerInput
 
 class SupervisorForm(forms.ModelForm):
     class Meta:
@@ -7,7 +8,8 @@ class SupervisorForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'password': forms.PasswordInput(),
-            're_password': forms.PasswordInput()
+            're_password': forms.PasswordInput(),
+            'dateofbirth': DatePickerInput(format='%Y-%m-%d')
         }
         labels = {
             "project": "Project | To select multiple hold the ctrl key while selecting"
@@ -17,6 +19,9 @@ class labourForm(forms.ModelForm):
     class Meta:
         model = labour
         fields = '__all__'
+        widgets = {
+            'dateofbirth': DatePickerInput(format='%Y-%m-%d')
+        }
 
 class SupervisorUpdateForm(forms.ModelForm):
     class Meta:
