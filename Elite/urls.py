@@ -26,6 +26,7 @@ urlpatterns = [
     path('supervisor/',emp_view.get_all_supervisor,name='all_supervisor'),
     path('supervisor/<int:id>',emp_view.supervisor_detail,name='supervisor_detail'),
     path('labour/',emp_view.get_all_employee,name='all_employee'),
+    path('labour/<int:id>/',emp_view.labour_detail_page,name='labour_detail_page'),
     path('projects/',project_view.all_projects,name='all_projects'),
     path('add_project/<int:id>',project_view.add_project,name='add_tender'),
     path('create_supervisor/',emp_view.create_super,name='create_super'),
