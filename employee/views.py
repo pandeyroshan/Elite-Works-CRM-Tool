@@ -173,3 +173,8 @@ def detail_attandance(request,year,month,day,shift,id):
         'total' : len(att_data),
         'project' : Projects.objects.get(id=id)
     })
+
+@login_required
+def labour_detail_page(request,id):
+    obj = labour.objects.get(id=id)
+    return render(request,'employee/labour.html',{'labour': obj})
