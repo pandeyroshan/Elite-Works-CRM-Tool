@@ -84,9 +84,9 @@
                                                 <th>Project</th>
                                                 <th>Mobile Number</th>
                                                 <th>Address</th>
-                                                <th>Aadhar Number</th>
-                                                <th>PAN Number</th>
                                                 <th>UAN Number</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -96,9 +96,9 @@
                                                 <td>{{super.project}}</td>
                                                 <td>{{super.mobile_number}}</td>
                                                 <td>{{super.address}}</td>
-                                                <td>{{super.aadhar_number}}</td>
-                                                <td>{{super.pan_number}}</td>
                                                 <td>{{super.UAN_number}}</td>
+                                                <td><a href="/update_labour/{{super.id}}/" class="text-success" style="text-decoration: none;"> &#9998; </a></td>
+                                                <td><a href="/delete_labour/{{super.id}}/" class="text-danger" style="text-decoration: none;"> &#10539; </a></td>
                                             </tr>
                                             {%endfor%}
                                         </tbody>

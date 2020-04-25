@@ -1,8 +1,9 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
 from .models import SuperVisors,labour,Attendance
 from django.contrib.auth.decorators import login_required
 from employee.models import Projects
-from .forms import SupervisorForm,labourForm,SupervisorUpdateForm
+from .forms import SupervisorForm,labourForm,SupervisorUpdateForm,LabourUpdateForm
 from django.contrib.auth.models import User
 from django.db.models import Count
 from django.db.models.query import QuerySet
@@ -10,6 +11,7 @@ import datetime
 import bs4 as bs
 import urllib.request
 import os
+import json
 # Create your views here.
 
 @login_required
@@ -89,9 +91,15 @@ def mark_attandance(request,id):
 @login_required
 def update_supervisor(request,id):
     if request.method=='POST':
-        print(request.POST)
         supervisor = SuperVisors.objects.get(id=id)
-        supervisor.project = Projects.objects.get(id = request.POST.get('project'))
+        supervisor.project.clear()
+        json_data = json.dumps({k: request.POST.getlist(k) for k in request.POST.keys()})
+        print(json_data)
+        dict_data = json.loads(json_data)
+        project_ids = dict_data['project']
+        for id in project_ids:
+            obj = Projects.objects.get(id=int(id))
+            supervisor.project.add(obj)
         supervisor.name = request.POST.get('name')
         supervisor.mobile_number = request.POST.get('mobile_number')
         supervisor.alter_number = request.POST.get('alter_number')
@@ -110,7 +118,6 @@ def update_supervisor(request,id):
     else:
         supervisor = SuperVisors.objects.get(id=id)
         form = SupervisorUpdateForm(initial={
-            'project' : supervisor.project,
             'name' : supervisor.name ,
             'mobile_number' : supervisor.mobile_number,
             'alter_number' : supervisor.alter_number,
@@ -122,11 +129,42 @@ def update_supervisor(request,id):
             'UAN_number' : supervisor.UAN_number,
             'is_employee' : supervisor.is_employee
         })
-        return render(request,'employee/update_supervisor.html',{'form': form,})
+        return render(request,'employee/update_supervisor.html',{'form': form})
+
+
 
 @login_required
-def update_employee(request,id):
-    pass
+def update_labour(request,id):
+    if request.method=='POST':
+        labour_obj = labour.objects.get(id=id)
+        labour_obj.name = request.POST.get('name')
+        labour_obj.project = Projects.objects.get(id=int(request.POST.get('project')))
+        labour_obj.mobile_number = request.POST.get('mobile_number')
+        labour_obj.alter_number = request.POST.get('alter_number')
+        labour_obj.address = request.POST.get('address')
+        labour_obj.aadhar_number = request.POST.get('aadhar_number')
+        labour_obj.pan_number = request.POST.get('pan_number')
+        labour_obj.highest_qual = request.POST.get('highest_qual')
+        labour_obj.tech_certificate_name = request.POST.get('tech_certificate_name')
+        labour_obj.UAN_number = request.POST.get('UAN_number')
+        labour_obj.save()
+        return redirect('/labour/')
+    else:
+        labour_obj = labour.objects.get(id=id)
+        form = LabourUpdateForm(initial={
+            'project': labour_obj.project,
+            'name' : labour_obj.name ,
+            'mobile_number' : labour_obj.mobile_number,
+            'alter_number' : labour_obj.alter_number,
+            'address' : labour_obj.address,
+            'aadhar_number' : labour_obj.aadhar_number,
+            'pan_number' : labour_obj.pan_number,
+            'highest_qual' : labour_obj.highest_qual,
+            'tech_certificate_name' : labour_obj.tech_certificate_name,
+            'UAN_number' : labour_obj.UAN_number,
+        })
+        return render(request,'employee/update_labour.html',{'form': form})
+
 
 @login_required
 def supervisor_detail(request,id):
@@ -178,3 +216,16 @@ def detail_attandance(request,year,month,day,shift,id):
 def labour_detail_page(request,id):
     obj = labour.objects.get(id=id)
     return render(request,'employee/labour.html',{'labour': obj})
+
+@login_required
+def delete_supervisor(request,id):
+    obj = SuperVisors.objects.get(id=id)
+    obj.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+@login_required
+def delete_labour(request,id):
+    obj = labour.objects.get(id=id)
+    obj.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

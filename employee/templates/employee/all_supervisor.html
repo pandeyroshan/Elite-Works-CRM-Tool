@@ -84,6 +84,8 @@
                                                 <th>Mobile Number</th>
                                                 <th>Address</th>
                                                 <th>UAN Number</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -93,6 +95,8 @@
                                                 <td>{{super.mobile_number}}</td>
                                                 <td>{{super.address}}</td>
                                                 <td>{{super.UAN_number}}</td>
+                                                <td><a href="/update_supervisor/{{super.id}}/" class="text-success" style="text-decoration: none;"> &#9998; </a></td>
+                                                <td><a href="/delete_supervisor/{{super.id}}/" class="text-danger" style="text-decoration: none;"> &#10539; </a></td>
                                             </tr>
                                             {%endfor%}
                                         </tbody>
