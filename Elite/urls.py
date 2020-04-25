@@ -35,7 +35,7 @@ urlpatterns = [
     path('edit_project/<int:id>',project_view.edit_project,name='edit_project'),
     path('attandance/<int:id>',emp_view.mark_attandance,name='mark_attandance'),
     path('view_attandance/<int:id>',emp_view.view_attandance,name='view_attandance'),
-    path('detail_attandance/<int:year>/<int:month>/<int:day>/<slug:shift>/<int:id>/',emp_view.detail_attandance,name='detail_attandance'),
+    path('detail_attandance/<int:year>/<int:month>/<int:day>/<int:id>/',emp_view.detail_attandance,name='detail_attandance'),
     path('update_supervisor/<int:id>/',emp_view.update_supervisor,name='update_supervisor'),
     path('testing/',project_view.testing,name='testing'),
     path('bug/',project_view.add_bug,name='add_bug'),
@@ -45,6 +45,8 @@ urlpatterns = [
     path('delete_supervisor/<int:id>/',emp_view.delete_supervisor,name='delete_supervisor'),
     path('delete_labour/<int:id>/',emp_view.delete_labour,name='delete_labour'),
     path('update_labour/<int:id>/',emp_view.update_labour,name='update_labour'),
+    path('delete_tender/<int:id>/',project_view.delete_tender,name='delete_tender'),
+    path('delete_project/<int:id>/',project_view.delete_project,name='delete_project'),
 ]
 
 

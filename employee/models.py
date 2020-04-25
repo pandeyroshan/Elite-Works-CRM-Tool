@@ -73,7 +73,8 @@ class Attendance(models.Model):
     A = 'A'
     B = 'B'
     C = 'C'
-    status = [(A, 'A'),(B, 'B'),(C, 'C')]
+    R = 'R'
+    status = [(A, 'A'),(B, 'B'),(C, 'C'),(R,'R')]
     shift = models.CharField('Shift',max_length=10,choices=status,default=A)
     is_present = models.BooleanField(default=False)
 

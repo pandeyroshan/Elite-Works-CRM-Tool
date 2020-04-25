@@ -84,6 +84,7 @@
                                                 <th class="text-center">S.No.</th>
                                                 <th class="text-center">UAN Number</th>
                                                 <th class="text-center">Name</th>
+                                                <th class="text-center">Shift</th>
                                                 <th class="text-center">Status</th>
                                             </tr>
                                         </thead>
@@ -93,6 +94,7 @@
                                                 <td class="text-center">{{forloop.counter}}</td>
                                                 <td class="text-center">{{data.labour.UAN_number}}</td>
                                                 <td class="text-center">{{data.labour.name}}</td>
+                                                <td class="text-center">{{data.shift}}</td>
                                                 {%if data.is_present%}
                                                     <td class="text-center text-success">PRESENT</td>
                                                 {%else%}

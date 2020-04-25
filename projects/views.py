@@ -10,29 +10,32 @@ from .server import check_servers
 
 @login_required
 def index(request):
-    if request.method=='POST':
-        ticket = request.POST.get('ticket')
-        bug = Bugs.objects.all().filter(ticket=ticket)
-        if bug:
-            return render(request,'projects/issue.html',{'bug':bug[0]})
-        else:
-            return render(request,'projects/issue.html',{'message':'Sorry! No such Ticket ID Exist, Kindly recheck!!!'})
-    project_data = Projects.objects.all().values()
-    for i in range(len(project_data)):
-        try:
-            supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
-        except:
-            supervisor = {'name': 'Not Allocated'}
-        project_data[i]['supervisor'] = supervisor
-        project_data[i]['tender'] = Tender.objects.get(id=project_data[i]['tender_id'])
-    context = {
-        'total_tender' : len(Tender.objects.all()),
-        'success_tender' : len(Tender.objects.all().filter(bid_status='Yes')),
-        'projects' : len(Projects.objects.all()),
-        'SuperVisors': 0,
-        'all_project': project_data
-    }
-    return render(request,'projects/index.html',context)
+    if request.user.is_superuser:
+        if request.method=='POST':
+            ticket = request.POST.get('ticket')
+            bug = Bugs.objects.all().filter(ticket=ticket)
+            if bug:
+                return render(request,'projects/issue.html',{'bug':bug[0]})
+            else:
+                return render(request,'projects/issue.html',{'message':'Sorry! No such Ticket ID Exist, Kindly recheck!!!'})
+        project_data = Projects.objects.all().values()
+        for i in range(len(project_data)):
+            try:
+                supervisor = SuperVisors.objects.get(project=project_data[i]['id'])
+            except:
+                supervisor = {'name': 'Not Allocated'}
+            project_data[i]['supervisor'] = supervisor
+            project_data[i]['tender'] = Tender.objects.get(id=project_data[i]['tender_id'])
+        context = {
+            'total_tender' : len(Tender.objects.all()),
+            'success_tender' : len(Tender.objects.all().filter(bid_status='Yes')),
+            'projects' : len(Projects.objects.all()),
+            'SuperVisors': 0,
+            'all_project': project_data
+        }
+        return render(request,'projects/index.html',context)
+    else:
+        return render(request,'projects/supervisor_index.html')
 
 @login_required
 def tender(request):
@@ -243,5 +246,17 @@ def update_contractor(request,id,tid):
 
 def delete_contractor(request,id):
     obj = other_contractors_bid.objects.get(id=id)
+    obj.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+@login_required
+def delete_tender(request,id):
+    obj = Tender.objects.get(id=id)
+    obj.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+@login_required
+def delete_project(request,id):
+    obj = Projects.objects.get(id=id)
     obj.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

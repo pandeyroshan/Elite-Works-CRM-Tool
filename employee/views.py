@@ -71,15 +71,18 @@ def mark_attandance(request,id):
             date = request.POST.get('date')
             shift = request.POST.get('shift')
             for data in labours:
+                shift_status = request.POST.get(str(data.id)+'S')
                 if request.POST.get(str(data.id))=='P':
-                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift,is_present=True)
+                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift_status,is_present=True)
                 else:
-                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift,is_present=False)
+                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift_status,is_present=False)
                 att_object.save()
             return redirect('/project/'+str(id))
         else:
             project = Projects.objects.get(id=id)
             labours = labour.objects.all().filter(project=project)
+            for data in labours:
+                data.SC = str(data.id) + str('S') # Shift Choice
             return render(request,'employee/attandance.html',{
                 'project' : project,
                 'labours' : labours,
@@ -176,14 +179,13 @@ def view_attandance(request,id):
     project = Projects.objects.get(id=id)
     labours = labour.objects.all().filter(project=project)
     supervisor = SuperVisors.objects.get(project=id)
-    raw_data = Attendance.objects.filter(project=project).values('date','shift').distinct().order_by('-date')
+    raw_data = Attendance.objects.filter(project=project).values('date').distinct().order_by('-date')
     for i in range(len(raw_data)): #add statistics in every individual data
         total = 0
         present = 0
         absent = 0
         date = raw_data[i]['date']
-        shift = raw_data[i]['shift']
-        date_shift = Attendance.objects.all().filter(project=project,date=date,shift=shift).values('is_present')
+        date_shift = Attendance.objects.all().filter(project=project,date=date).values('is_present')
         for data in date_shift:
             if data['is_present'] == True:
                 present+=1
@@ -191,7 +193,6 @@ def view_attandance(request,id):
                 absent+=1
         raw_data[i]['present'] = present
         raw_data[i]['absent'] = absent
-        print(date_shift,end='\n\n')
     print(raw_data)
     return render(request,'employee/show_attandance.html',{
         'project': project,
@@ -201,13 +202,12 @@ def view_attandance(request,id):
     })
 
 @login_required
-def detail_attandance(request,year,month,day,shift,id):
+def detail_attandance(request,year,month,day,id):
     date = datetime.date(year,month,day)
-    att_data = Attendance.objects.all().filter(project=Projects.objects.get(id=id),date=date,shift=shift)
+    att_data = Attendance.objects.all().filter(project=Projects.objects.get(id=id),date=date)
     return render(request,'employee/detail_attandance.html',{
         'att_data' : att_data,
         'date' : date,
-        'shift' : shift,
         'total' : len(att_data),
         'project' : Projects.objects.get(id=id)
     })

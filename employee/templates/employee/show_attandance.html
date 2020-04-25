@@ -86,8 +86,8 @@
                                             <tr>
                                                 <th class="text-center">S.NO.</th>
                                                 <th class="text-center">Date</th>
-                                                <th class="text-center">Shift</th>
                                                 <th class="text-center">Statistics</th>
+                                                <th class="text-center">Detail</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -95,8 +95,8 @@
                                             <tr>
                                                 <td class="text-center">{{forloop.counter}}.</td>
                                                 <td class="text-center">{{data.date}}</td>
-                                                <td class="text-center">{{data.shift}}</td>
-                                                <td class="text-center"><a href="/detail_attandance/{{data.date.year}}/{{data.date.month}}/{{data.date.day}}/{{data.shift}}/{{project.id}}/" style="text-decoration: none;">{{data.present}} Present - {{data.absent}} Absent</a></td>
+                                                <td class="text-center">{{data.present}} Present - {{data.absent}} Absent</td>
+                                                <td class="text-center"><a href="/detail_attandance/{{data.date|date:'Y/m/d'}}/{{project.id}}/" style="text-decoration: none;">Detail view</a></td>
                                             </tr>
                                             {%endfor%}
                                         </tbody>
