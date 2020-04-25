@@ -16,6 +16,16 @@
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="/"><img src="https://pandeyroshan.github.io/elite.png" style="width: 100%; height: 10%;"></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="POST">
+                {%csrf_token%}
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Track your Bug Status ..." aria-label="Search" aria-describedby="basic-addon2" name="ticket" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <a href="/bug"><button class="btn btn-warning mr-3 btn-sm">Bugs & Feature</button></a>
             <!-- Navbar -->
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -38,22 +48,13 @@
                                 ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard</a
                             >
-                            <div class="sb-sidenav-menu-heading">Tender & Projects</div>
+                            <div class="sb-sidenav-menu-heading">My Projects</div>
+                            
                             <a class="nav-link collapsed" href="/tender" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Tenders
                             </a>
-                            <a class="nav-link collapsed" href="/projects/" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Projects
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Supervisors & Employee</div>
-                            <a class="nav-link" href="/supervisor"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Supervisors</a
-                            ><a class="nav-link" href="/labour"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Employee</a>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -73,71 +74,7 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
-                        <div class="row mt-3">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">All Tenders - {{total_tender}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="tender/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">My Tenders - {{success_tender}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="my_tender/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">All Projects - {{projects}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/projects/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">All Supervisors - {{SuperVisors}}</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/supervisor/">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Live Projects</div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Project</th>
-                                                <th>Tender</th>
-                                                <th>Start Date</th>
-                                                <th>Supervisor</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {%for project in all_project%}
-                                            <tr>
-                                                <td>{{project.project_name}}</td>
-                                                <td>{{project.tender}}</td>
-                                                <td>{{project.start_date}}</td>
-                                                <td>{{project.supervisor.name}}</td>
-                                            </tr>
-                                            {%endfor%}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        <h4>Welcome {{supervisor.name}}</h4>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

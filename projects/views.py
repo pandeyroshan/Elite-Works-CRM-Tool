@@ -35,7 +35,11 @@ def index(request):
         }
         return render(request,'projects/index.html',context)
     else:
-        return render(request,'projects/supervisor_index.html')
+        current_supervisor = SuperVisors.objects.get(username = request.user.username)
+        context = {
+            'supervisor' : current_supervisor
+        }
+        return render(request,'projects/supervisor_index.html',context)
 
 @login_required
 def tender(request):

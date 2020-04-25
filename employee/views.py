@@ -73,9 +73,9 @@ def mark_attandance(request,id):
             for data in labours:
                 shift_status = request.POST.get(str(data.id)+'S')
                 if request.POST.get(str(data.id))=='P':
-                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift_status,is_present=True)
+                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift_status)
                 else:
-                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift_status,is_present=False)
+                    att_object = Attendance.objects.create(project=project,date=date,labour=data,shift=shift_status)
                 att_object.save()
             return redirect('/project/'+str(id))
         else:
@@ -185,9 +185,9 @@ def view_attandance(request,id):
         present = 0
         absent = 0
         date = raw_data[i]['date']
-        date_shift = Attendance.objects.all().filter(project=project,date=date).values('is_present')
+        date_shift = Attendance.objects.all().filter(project=project,date=date).values('shift')
         for data in date_shift:
-            if data['is_present'] == True:
+            if data['shift'] != 'R':
                 present+=1
             else:
                 absent+=1

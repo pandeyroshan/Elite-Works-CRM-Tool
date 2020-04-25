@@ -76,10 +76,9 @@ class Attendance(models.Model):
     R = 'R'
     status = [(A, 'A'),(B, 'B'),(C, 'C'),(R,'R')]
     shift = models.CharField('Shift',max_length=10,choices=status,default=A)
-    is_present = models.BooleanField(default=False)
 
     def __str__(self):
-        return str(self.labour)+' - '+str(self.is_present)
+        return str(self.labour)
     
     class Meta:
         verbose_name = 'Attandance'
