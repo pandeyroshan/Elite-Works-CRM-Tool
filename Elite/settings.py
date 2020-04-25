@@ -13,7 +13,10 @@ INSTALLED_APPS = [
     'employee',
     'projects',
     'crispy_forms',
-    'admin_honeypot'
+    'admin_honeypot',
+    'bootstrap_datepicker_plus',
+    'django_forms_bootstrap',
+    'bootstrap4',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -96,3 +99,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

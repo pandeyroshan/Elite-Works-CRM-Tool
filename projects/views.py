@@ -176,7 +176,7 @@ def add_project(request,id):
         pass
     else:
         form = ProjectForm()
-    return render(request,'projects/add_project.html',{'form':form})
+    return render(request,'projects/add_project.html',{'form':form,'tender': Tender.objects.get(id=id)})
 
 
 @login_required
