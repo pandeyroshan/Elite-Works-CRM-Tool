@@ -37,7 +37,8 @@ def index(request):
     else:
         current_supervisor = SuperVisors.objects.get(username = request.user.username)
         context = {
-            'supervisor' : current_supervisor
+            'supervisor' : current_supervisor,
+            'projects' : current_supervisor.project.all()
         }
         return render(request,'projects/supervisor_index.html',context)
 
@@ -45,7 +46,7 @@ def index(request):
 def tender(request):
     tender_list = Tender.objects.all()
     context = {
-        'tender_list': tender_list
+        'tender_list': tender_list,
     }
     return render(request,'projects/tender_page.html',context)
 

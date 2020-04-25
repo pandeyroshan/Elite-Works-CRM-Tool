@@ -50,10 +50,12 @@
                             >
                             <div class="sb-sidenav-menu-heading">My Projects</div>
                             
+                            {%for data in projects%}
                             <a class="nav-link collapsed" href="/tender" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Tenders
+                                {{data.project_name}}
                             </a>
+                            {%endfor%}
 
                         </div>
                     </div>
