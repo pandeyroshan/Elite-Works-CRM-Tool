@@ -63,7 +63,7 @@ def create_labour(request):
 
 @login_required
 def mark_attandance(request,id):
-    if str(request.user) == str(SuperVisors.objects.get(project=id)) or request.user.is_superuser: # success
+    if request.user.is_superuser: # success
         if request.method == 'POST':
             print(request.POST)
             project = Projects.objects.get(id=id)
@@ -178,7 +178,6 @@ def supervisor_detail(request,id):
 def view_attandance(request,id):
     project = Projects.objects.get(id=id)
     labours = labour.objects.all().filter(project=project)
-    supervisor = SuperVisors.objects.get(project=id)
     raw_data = Attendance.objects.filter(project=project).values('date').distinct().order_by('-date')
     for i in range(len(raw_data)): #add statistics in every individual data
         total = 0
@@ -197,7 +196,6 @@ def view_attandance(request,id):
     return render(request,'employee/show_attandance.html',{
         'project': project,
         'total_labour':len(labours),
-        'supervisor':supervisor,
         'major_data':raw_data
     })
 
