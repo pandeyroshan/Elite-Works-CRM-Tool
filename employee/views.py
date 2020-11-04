@@ -12,7 +12,8 @@ import bs4 as bs
 import urllib.request
 import os
 import json
-# Create your views here.
+import datetime
+# Create your views here
 
 @login_required
 def get_all_supervisor(request):
@@ -83,10 +84,12 @@ def mark_attandance(request,id):
             labours = labour.objects.all().filter(project=project)
             for data in labours:
                 data.SC = str(data.id) + str('S') # Shift Choice
+            print(datetime.date.today())
             return render(request,'employee/attandance.html',{
                 'project' : project,
                 'labours' : labours,
-                'total_labour': len(labours)
+                'total_labour': len(labours),
+                'today_date': datetime.date.today().strftime('%d/%m/%Y')
             })
     else:
         return render(request,'projects/404.html')
@@ -196,7 +199,7 @@ def view_attandance(request,id):
     return render(request,'employee/show_attandance.html',{
         'project': project,
         'total_labour':len(labours),
-        'major_data':raw_data
+        'major_data':raw_data,
     })
 
 @login_required
