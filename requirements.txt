@@ -37,7 +37,7 @@ fpdf==1.7.2
 freezegun==0.3.12
 gunicorn==20.0.4
 ipaddress==1.0.22
-Jinja2==2.10.3
+Jinja2==2.11.3
 Pillow==6.2.0
 python-dateutil==2.8.0
 requests==2.21.0
